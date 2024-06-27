@@ -5,8 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { LogoWithTextProps } from "./LogoWithText";
-import { FlexProps, ImageProps, TextProps } from "@aws-amplify/ui-react";
+import { FlexProps, IconProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 import { MyIconProps } from "./MyIcon";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
@@ -21,13 +20,25 @@ export declare type Variant = {
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type NavBarHeaderOverridesProps = {
     NavBarHeader?: PrimitiveOverrideProps<FlexProps>;
-    LogoWithText?: LogoWithTextProps;
     "Frame 32129767076"?: PrimitiveOverrideProps<FlexProps>;
-    Dashboard?: PrimitiveOverrideProps<TextProps>;
+    "Frame 438"?: PrimitiveOverrideProps<FlexProps>;
+    Simplification?: PrimitiveOverrideProps<ViewProps>;
+    Vector3878531?: PrimitiveOverrideProps<IconProps>;
+    Vector3878532?: PrimitiveOverrideProps<IconProps>;
+    Vector3878533?: PrimitiveOverrideProps<IconProps>;
+    Vector3878534?: PrimitiveOverrideProps<IconProps>;
+    Vector3878535?: PrimitiveOverrideProps<IconProps>;
+    Vector3878536?: PrimitiveOverrideProps<IconProps>;
+    Vector3878537?: PrimitiveOverrideProps<IconProps>;
+    Vector3878538?: PrimitiveOverrideProps<IconProps>;
+    Vector3878539?: PrimitiveOverrideProps<IconProps>;
+    "Logo Text"?: PrimitiveOverrideProps<TextProps>;
+    "Add Pet"?: PrimitiveOverrideProps<TextProps>;
     Jobs?: PrimitiveOverrideProps<TextProps>;
     Applicants?: PrimitiveOverrideProps<TextProps>;
     Company?: PrimitiveOverrideProps<TextProps>;
     "Frame 32129767081"?: PrimitiveOverrideProps<FlexProps>;
+    "Frame 437"?: PrimitiveOverrideProps<ViewProps>;
     MyIcon?: MyIconProps;
     image?: PrimitiveOverrideProps<ImageProps>;
 } & EscapeHatchProps;

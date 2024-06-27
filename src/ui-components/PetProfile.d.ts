@@ -7,7 +7,6 @@
 import * as React from "react";
 import { Pet } from "../models";
 import { ButtonProps, FlexProps, ImageProps, TextProps } from "@aws-amplify/ui-react";
-import { MyIconProps } from "./MyIcon";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -22,12 +21,11 @@ export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes
 export declare type PetProfileOverridesProps = {
     PetProfile?: PrimitiveOverrideProps<FlexProps>;
     image?: PrimitiveOverrideProps<ImageProps>;
-    Name?: PrimitiveOverrideProps<FlexProps>;
-    "Melinda Marcus"?: PrimitiveOverrideProps<TextProps>;
-    "Design Engineer at Cloth Studios"?: PrimitiveOverrideProps<TextProps>;
-    Followers?: PrimitiveOverrideProps<FlexProps>;
-    MyIcon?: MyIconProps;
-    "99 Followers"?: PrimitiveOverrideProps<TextProps>;
+    Details?: PrimitiveOverrideProps<FlexProps>;
+    Name?: PrimitiveOverrideProps<TextProps>;
+    Breed?: PrimitiveOverrideProps<TextProps>;
+    Age?: PrimitiveOverrideProps<TextProps>;
+    About?: PrimitiveOverrideProps<TextProps>;
     Button?: PrimitiveOverrideProps<ButtonProps>;
 } & EscapeHatchProps;
 export declare type PetProfileProps = React.PropsWithChildren<Partial<FlexProps> & {

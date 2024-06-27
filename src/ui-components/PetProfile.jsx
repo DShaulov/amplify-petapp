@@ -8,7 +8,6 @@
 import * as React from "react";
 import { getOverrideProps } from "./utils";
 import { Button, Flex, Image, Text } from "@aws-amplify/ui-react";
-import MyIcon from "./MyIcon";
 export default function PetProfile(props) {
   const { pet, overrides, ...rest } = props;
   return (
@@ -20,6 +19,7 @@ export default function PetProfile(props) {
       justifyContent="flex-start"
       alignItems="center"
       position="relative"
+      borderRadius="25px"
       padding="24px 24px 24px 24px"
       backgroundColor="rgba(255,255,255,1)"
       {...getOverrideProps(overrides, "PetProfile")}
@@ -50,7 +50,7 @@ export default function PetProfile(props) {
         shrink="0"
         position="relative"
         padding="0px 0px 0px 0px"
-        {...getOverrideProps(overrides, "Name")}
+        {...getOverrideProps(overrides, "Details")}
       >
         <Text
           fontFamily="Inter"
@@ -71,7 +71,7 @@ export default function PetProfile(props) {
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
           children={pet?.name}
-          {...getOverrideProps(overrides, "Melinda Marcus")}
+          {...getOverrideProps(overrides, "Name")}
         ></Text>
         <Text
           fontFamily="Inter"
@@ -92,36 +92,9 @@ export default function PetProfile(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children={pet?.about}
-          {...getOverrideProps(overrides, "Design Engineer at Cloth Studios")}
+          children={`${"Breed: "}${pet?.breed}`}
+          {...getOverrideProps(overrides, "Breed")}
         ></Text>
-      </Flex>
-      <Flex
-        gap="16px"
-        direction="row"
-        width="unset"
-        height="unset"
-        justifyContent="flex-start"
-        alignItems="flex-start"
-        shrink="0"
-        position="relative"
-        padding="0px 0px 0px 0px"
-        {...getOverrideProps(overrides, "Followers")}
-      >
-        <MyIcon
-          width="24px"
-          height="24px"
-          display="block"
-          gap="unset"
-          alignItems="unset"
-          justifyContent="unset"
-          overflow="hidden"
-          shrink="0"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          type="group"
-          {...getOverrideProps(overrides, "MyIcon")}
-        ></MyIcon>
         <Text
           fontFamily="Inter"
           fontSize="16px"
@@ -141,8 +114,30 @@ export default function PetProfile(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="99 Followers"
-          {...getOverrideProps(overrides, "99 Followers")}
+          children={`${"Age: "}${pet?.age}`}
+          {...getOverrideProps(overrides, "Age")}
+        ></Text>
+        <Text
+          fontFamily="Inter"
+          fontSize="16px"
+          fontWeight="400"
+          color="rgba(48,64,80,1)"
+          lineHeight="24px"
+          textAlign="center"
+          display="block"
+          direction="column"
+          justifyContent="unset"
+          letterSpacing="0.01px"
+          width="unset"
+          height="unset"
+          gap="unset"
+          alignItems="unset"
+          shrink="0"
+          position="relative"
+          padding="0px 0px 0px 0px"
+          whiteSpace="pre-wrap"
+          children={`${"About: "}${pet?.about}`}
+          {...getOverrideProps(overrides, "About")}
         ></Text>
       </Flex>
       <Button

@@ -30,7 +30,7 @@ export default function Pets(props) {
   return (
     <Collection
       type="grid"
-      isSearchable={true}
+      isSearchable="true"
       isPaginated={true}
       searchPlaceholder="Search..."
       templateColumns="1fr 1fr 1fr"
@@ -44,6 +44,7 @@ export default function Pets(props) {
       {(item, index) => (
         <PetProfile
           pet={item}
+          margin="1rem 1rem 1rem 1rem"
           key={item.id}
           {...(overrideItems && overrideItems({ item, index }))}
         ></PetProfile>
