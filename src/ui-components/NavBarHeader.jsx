@@ -7,8 +7,7 @@
 /* eslint-disable */
 import * as React from "react";
 import { getOverrideProps } from "./utils";
-import { Flex, Icon, Image, Text, View } from "@aws-amplify/ui-react";
-import MyIcon from "./MyIcon";
+import { Button, Flex, Icon, Image, Text, View } from "@aws-amplify/ui-react";
 export default function NavBarHeader(props) {
   const { overrides, ...rest } = props;
   return (
@@ -31,7 +30,7 @@ export default function NavBarHeader(props) {
         direction="row"
         width="690px"
         height="unset"
-        justifyContent="center"
+        justifyContent="flex-start"
         alignItems="center"
         shrink="0"
         position="relative"
@@ -327,7 +326,7 @@ export default function NavBarHeader(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="DogAdopt"
+            children="Adoptadog"
             {...getOverrideProps(overrides, "Logo Text")}
           ></Text>
         </Flex>
@@ -351,69 +350,6 @@ export default function NavBarHeader(props) {
           whiteSpace="pre-wrap"
           children="Add Pet"
           {...getOverrideProps(overrides, "Add Pet")}
-        ></Text>
-        <Text
-          fontFamily="Inter"
-          fontSize="16px"
-          fontWeight="400"
-          color="rgba(92,102,112,1)"
-          lineHeight="24px"
-          textAlign="left"
-          display="block"
-          direction="column"
-          justifyContent="unset"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
-          shrink="0"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          whiteSpace="pre-wrap"
-          children="Jobs"
-          {...getOverrideProps(overrides, "Jobs")}
-        ></Text>
-        <Text
-          fontFamily="Inter"
-          fontSize="16px"
-          fontWeight="400"
-          color="rgba(92,102,112,1)"
-          lineHeight="24px"
-          textAlign="left"
-          display="block"
-          direction="column"
-          justifyContent="unset"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
-          shrink="0"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          whiteSpace="pre-wrap"
-          children="Applicants"
-          {...getOverrideProps(overrides, "Applicants")}
-        ></Text>
-        <Text
-          fontFamily="Inter"
-          fontSize="16px"
-          fontWeight="400"
-          color="rgba(92,102,112,1)"
-          lineHeight="24px"
-          textAlign="left"
-          display="block"
-          direction="column"
-          justifyContent="unset"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
-          shrink="0"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          whiteSpace="pre-wrap"
-          children="Company"
-          {...getOverrideProps(overrides, "Company")}
         ></Text>
       </Flex>
       <Flex
@@ -443,20 +379,16 @@ export default function NavBarHeader(props) {
           padding="0px 0px 0px 0px"
           {...getOverrideProps(overrides, "Frame 437")}
         ></View>
-        <MyIcon
-          width="24px"
-          height="24px"
-          display="block"
-          gap="unset"
-          alignItems="unset"
-          justifyContent="unset"
-          overflow="hidden"
+        <Button
+          width="unset"
+          height="unset"
           shrink="0"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          type="notification"
-          {...getOverrideProps(overrides, "MyIcon")}
-        ></MyIcon>
+          size="large"
+          isDisabled={false}
+          variation="default"
+          children="Sign In"
+          {...getOverrideProps(overrides, "SignButton")}
+        ></Button>
         <Image
           width="45px"
           height="45px"

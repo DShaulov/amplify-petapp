@@ -6,51 +6,31 @@
 
 /* eslint-disable */
 import * as React from "react";
-import {
-  getOverrideProps,
-  useDataStoreCreateAction,
-  useStateMutationAction,
-} from "./utils";
-import { Pet } from "../models";
-import { schema } from "../models/schema";
+import { getOverrideProps } from "./utils";
 import MyIcon from "./MyIcon";
-import { Button, Flex, Image, Text, TextField } from "@aws-amplify/ui-react";
-export default function RegisterDogForm(props) {
+import { Button, Flex, Text, TextField } from "@aws-amplify/ui-react";
+export default function RegisterForm(props) {
   const { overrides, ...rest } = props;
-  const [nameValue, setNameValue] = useStateMutationAction("");
-  const [ageValue, setAgeValue] = useStateMutationAction("");
-  const [breedValue, setBreedValue] = useStateMutationAction("");
-  const [aboutValue, setAboutValue] = useStateMutationAction("");
-  const saveButtonOnClick = useDataStoreCreateAction({
-    fields: {
-      name: nameValue,
-      age: ageValue,
-      breed: breedValue,
-      about: aboutValue,
-    },
-    model: Pet,
-    schema: schema,
-  });
   return (
     <Flex
       gap="16px"
       direction="column"
-      width="640px"
-      height="unset"
+      width="481px"
+      height="624px"
       justifyContent="flex-start"
       alignItems="flex-start"
       position="relative"
       borderRadius="25px"
       padding="0px 0px 0px 0px"
       backgroundColor="rgba(255,255,255,1)"
-      {...getOverrideProps(overrides, "RegisterDogForm")}
+      {...getOverrideProps(overrides, "RegisterForm")}
       {...rest}
     >
       <Flex
-        gap="24px"
+        gap="10px"
         direction="column"
         width="unset"
-        height="unset"
+        height="624px"
         justifyContent="center"
         alignItems="center"
         shrink="0"
@@ -70,7 +50,7 @@ export default function RegisterDogForm(props) {
           alignSelf="stretch"
           position="relative"
           padding="0px 0px 0px 0px"
-          {...getOverrideProps(overrides, "Edit Profile")}
+          {...getOverrideProps(overrides, "Title")}
         >
           <MyIcon
             width="24px"
@@ -104,62 +84,12 @@ export default function RegisterDogForm(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="Register Dog"
-            {...getOverrideProps(overrides, "Register Dog")}
+            children="Register"
+            {...getOverrideProps(overrides, "Register Title")}
           ></Text>
         </Flex>
         <Flex
-          gap="16px"
-          direction="row"
-          width="unset"
-          height="unset"
-          justifyContent="center"
-          alignItems="center"
-          shrink="0"
-          alignSelf="stretch"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          {...getOverrideProps(overrides, "Profile")}
-        >
-          <Image
-            width="96px"
-            height="96px"
-            display="block"
-            gap="unset"
-            alignItems="unset"
-            justifyContent="unset"
-            shrink="0"
-            position="relative"
-            borderRadius="160px"
-            padding="0px 0px 0px 0px"
-            objectFit="cover"
-            {...getOverrideProps(overrides, "image")}
-          ></Image>
-          <Text
-            fontFamily="Inter"
-            fontSize="16px"
-            fontWeight="400"
-            color="rgba(13,26,38,1)"
-            lineHeight="22px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            textDecoration="underline"
-            width="unset"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            shrink="0"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="Upload New Image"
-            {...getOverrideProps(overrides, "Upload New Image")}
-          ></Text>
-        </Flex>
-        <Flex
-          gap="16px"
+          gap="5px"
           direction="column"
           width="unset"
           height="unset"
@@ -174,7 +104,7 @@ export default function RegisterDogForm(props) {
           <TextField
             width="unset"
             height="unset"
-            label="Name"
+            label="Username:"
             shrink="0"
             alignSelf="stretch"
             placeholder=""
@@ -182,63 +112,102 @@ export default function RegisterDogForm(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
-            value={nameValue}
-            onChange={(event) => {
-              setNameValue(event.target.value);
-            }}
+            {...getOverrideProps(overrides, "Username")}
+          ></TextField>
+          <TextField
+            width="unset"
+            height="unset"
+            label="Password:"
+            shrink="0"
+            alignSelf="stretch"
+            placeholder=""
+            size="default"
+            isDisabled={false}
+            labelHidden={false}
+            variation="default"
+            {...getOverrideProps(overrides, "Password")}
+          ></TextField>
+          <TextField
+            width="unset"
+            height="unset"
+            label="Confirm Password:"
+            shrink="0"
+            alignSelf="stretch"
+            placeholder=""
+            size="default"
+            isDisabled={false}
+            labelHidden={false}
+            variation="default"
+            {...getOverrideProps(overrides, "ConfirmPassword")}
+          ></TextField>
+          <TextField
+            width="unset"
+            height="unset"
+            label="Email:"
+            shrink="0"
+            alignSelf="stretch"
+            placeholder=""
+            size="default"
+            isDisabled={false}
+            labelHidden={false}
+            variation="default"
+            {...getOverrideProps(overrides, "Email")}
+          ></TextField>
+          <TextField
+            width="unset"
+            height="unset"
+            label="Name:"
+            shrink="0"
+            alignSelf="stretch"
+            placeholder=""
+            size="default"
+            isDisabled={false}
+            labelHidden={false}
+            variation="default"
             {...getOverrideProps(overrides, "Name")}
           ></TextField>
-          <TextField
+        </Flex>
+        <Flex
+          gap="10px"
+          direction="row"
+          width="unset"
+          height="unset"
+          justifyContent="center"
+          alignItems="center"
+          overflow="hidden"
+          grow="1"
+          shrink="1"
+          basis="0"
+          alignSelf="stretch"
+          position="relative"
+          padding="0px 0px 0px 0px"
+          backgroundColor="rgba(255,255,255,1)"
+          {...getOverrideProps(overrides, "Error Frame")}
+        >
+          <Text
+            fontFamily="Inter"
+            fontSize="16px"
+            fontWeight="700"
+            color="rgba(255,255,255,1)"
+            lineHeight="24px"
+            textAlign="center"
+            display="block"
+            direction="column"
+            justifyContent="unset"
             width="unset"
             height="unset"
-            label="Breed"
-            shrink="0"
+            gap="unset"
+            alignItems="unset"
+            grow="1"
+            shrink="1"
+            basis="0"
             alignSelf="stretch"
-            placeholder=""
-            size="default"
-            isDisabled={false}
-            labelHidden={false}
-            variation="default"
-            value={breedValue}
-            onChange={(event) => {
-              setBreedValue(event.target.value);
-            }}
-            {...getOverrideProps(overrides, "Breed")}
-          ></TextField>
-          <TextField
-            width="unset"
-            height="unset"
-            label="Age"
-            shrink="0"
-            alignSelf="stretch"
-            placeholder=""
-            size="default"
-            isDisabled={false}
-            labelHidden={false}
-            variation="default"
-            value={ageValue}
-            onChange={(event) => {
-              setAgeValue(event.target.value);
-            }}
-            {...getOverrideProps(overrides, "Age")}
-          ></TextField>
-          <TextField
-            width="unset"
-            height="unset"
-            label="About"
-            shrink="0"
-            alignSelf="stretch"
-            placeholder=""
-            size="default"
-            isDisabled={false}
-            labelHidden={false}
-            variation="default"
-            value={aboutValue}
-            onChange={(event) => {
-              setAboutValue(event.target.value);
-            }}
-            {...getOverrideProps(overrides, "About")}
-          ></TextField>
+            position="relative"
+            padding="0px 0px 0px 0px"
+            whiteSpace="pre-wrap"
+            children="Error"
+            {...getOverrideProps(overrides, "ErrorMessage")}
+          ></Text>
         </Flex>
         <Flex
           gap="11px"
@@ -261,22 +230,66 @@ export default function RegisterDogForm(props) {
             size="default"
             isDisabled={false}
             variation="primary"
-            children="Save"
-            onClick={() => {
-              saveButtonOnClick();
-            }}
-            {...getOverrideProps(overrides, "Save Button")}
+            children="Register"
+            {...getOverrideProps(overrides, "SignInButton")}
           ></Button>
-          <Button
+        </Flex>
+        <Flex
+          gap="10px"
+          direction="row"
+          width="unset"
+          height="unset"
+          justifyContent="center"
+          alignItems="center"
+          overflow="hidden"
+          shrink="0"
+          position="relative"
+          padding="0px 0px 0px 0px"
+          backgroundColor="rgba(255,255,255,1)"
+          {...getOverrideProps(overrides, "Register Frame")}
+        >
+          <Text
+            fontFamily="Inter"
+            fontSize="16px"
+            fontWeight="700"
+            color="rgba(0,0,0,1)"
+            lineHeight="24px"
+            textAlign="left"
+            display="block"
+            direction="column"
+            justifyContent="unset"
             width="unset"
             height="unset"
+            gap="unset"
+            alignItems="unset"
             shrink="0"
-            size="default"
-            isDisabled={true}
-            variation="primary"
-            children="Update"
-            {...getOverrideProps(overrides, "Update Button")}
-          ></Button>
+            position="relative"
+            padding="0px 0px 0px 0px"
+            whiteSpace="pre-wrap"
+            children="Already a member?"
+            {...getOverrideProps(overrides, "Already a member?")}
+          ></Text>
+          <Text
+            fontFamily="Inter"
+            fontSize="16px"
+            fontWeight="700"
+            color="rgba(0,0,0,1)"
+            lineHeight="24px"
+            textAlign="left"
+            display="block"
+            direction="column"
+            justifyContent="unset"
+            width="unset"
+            height="unset"
+            gap="unset"
+            alignItems="unset"
+            shrink="0"
+            position="relative"
+            padding="0px 0px 0px 0px"
+            whiteSpace="pre-wrap"
+            children="Login"
+            {...getOverrideProps(overrides, "Login")}
+          ></Text>
         </Flex>
       </Flex>
     </Flex>
