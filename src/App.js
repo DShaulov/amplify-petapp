@@ -12,14 +12,6 @@ function App() {
   const [showDetails, setShowDetails] = useState(false);
   const [pet, setPet] = useState();
 
-
-  async function signIn({ username, password }) {
-    try {
-      const { isSignedIn, nextStep } = await signIn({ username, password });
-    } catch (error) {
-      console.log('error signing in', error);
-    }
-  }
   const registerDogFormOverrides = {
     image: {
       src: 'https://img.icons8.com/color/50/000000/dog'
@@ -91,7 +83,7 @@ function App() {
       </ForegroundOverlay>
       <ForegroundOverlay isVisible={showForm} onClose={() => setShowForm(false)}>
         <RegisterDogForm 
-          overrides={ registerDogFormOverrides} 
+          overrides={ registerDogFormOverrides } 
           style={{
             textAlign: "left"
           }}

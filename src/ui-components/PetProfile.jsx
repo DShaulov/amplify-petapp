@@ -19,8 +19,9 @@ export default function PetProfile(props) {
       justifyContent="flex-start"
       alignItems="center"
       position="relative"
+      border="1px SOLID rgba(153,153,153,1)"
       borderRadius="25px"
-      padding="24px 24px 24px 24px"
+      padding="23px 23px 23px 23px"
       backgroundColor="rgba(255,255,255,1)"
       {...getOverrideProps(overrides, "PetProfile")}
       {...rest}
