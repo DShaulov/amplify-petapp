@@ -7,6 +7,7 @@
 /* eslint-disable */
 import * as React from "react";
 import { getOverrideProps } from "./utils";
+import MyIcon from "./MyIcon";
 import { Button, Flex, Text, TextField } from "@aws-amplify/ui-react";
 export default function VerificationForm(props) {
   const { overrides, ...rest } = props;
@@ -51,6 +52,20 @@ export default function VerificationForm(props) {
           padding="0px 0px 0px 0px"
           {...getOverrideProps(overrides, "Edit Profile")}
         >
+          <MyIcon
+            width="24px"
+            height="24px"
+            display="block"
+            gap="unset"
+            alignItems="unset"
+            justifyContent="unset"
+            overflow="hidden"
+            shrink="0"
+            position="relative"
+            padding="0px 0px 0px 0px"
+            type="close"
+            {...getOverrideProps(overrides, "MyIcon")}
+          ></MyIcon>
           <Text
             fontFamily="Inter"
             fontSize="16px"
@@ -205,7 +220,7 @@ export default function VerificationForm(props) {
             isDisabled={false}
             variation="primary"
             children="Confirm"
-            {...getOverrideProps(overrides, "SignInButton")}
+            {...getOverrideProps(overrides, "ConfirmBtn")}
           ></Button>
           <Button
             width="unset"

@@ -29,11 +29,10 @@ export declare type RegisterFormOverridesProps = {
     Password?: PrimitiveOverrideProps<TextFieldProps>;
     ConfirmPassword?: PrimitiveOverrideProps<TextFieldProps>;
     Email?: PrimitiveOverrideProps<TextFieldProps>;
-    Name?: PrimitiveOverrideProps<TextFieldProps>;
     "Error Frame"?: PrimitiveOverrideProps<FlexProps>;
     ErrorMessage?: PrimitiveOverrideProps<TextProps>;
     "Register Buttons"?: PrimitiveOverrideProps<FlexProps>;
-    SignInButton?: PrimitiveOverrideProps<ButtonProps>;
+    RegisterBtn?: PrimitiveOverrideProps<ButtonProps>;
     "Register Frame"?: PrimitiveOverrideProps<FlexProps>;
     "Already a member?"?: PrimitiveOverrideProps<TextProps>;
     Login?: PrimitiveOverrideProps<TextProps>;

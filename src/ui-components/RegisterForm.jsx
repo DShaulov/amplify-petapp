@@ -15,8 +15,8 @@ export default function RegisterForm(props) {
     <Flex
       gap="16px"
       direction="column"
-      width="481px"
-      height="624px"
+      width="476px"
+      height="513px"
       justifyContent="flex-start"
       alignItems="flex-start"
       position="relative"
@@ -30,7 +30,7 @@ export default function RegisterForm(props) {
         gap="10px"
         direction="column"
         width="unset"
-        height="624px"
+        height="525px"
         justifyContent="center"
         alignItems="center"
         shrink="0"
@@ -153,19 +153,6 @@ export default function RegisterForm(props) {
             variation="default"
             {...getOverrideProps(overrides, "Email")}
           ></TextField>
-          <TextField
-            width="unset"
-            height="unset"
-            label="Name:"
-            shrink="0"
-            alignSelf="stretch"
-            placeholder=""
-            size="default"
-            isDisabled={false}
-            labelHidden={false}
-            variation="default"
-            {...getOverrideProps(overrides, "Name")}
-          ></TextField>
         </Flex>
         <Flex
           gap="10px"
@@ -231,7 +218,7 @@ export default function RegisterForm(props) {
             isDisabled={false}
             variation="primary"
             children="Register"
-            {...getOverrideProps(overrides, "SignInButton")}
+            {...getOverrideProps(overrides, "RegisterBtn")}
           ></Button>
         </Flex>
         <Flex

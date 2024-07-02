@@ -5,6 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
+import { MyIconProps } from "./MyIcon";
 import { ButtonProps, FlexProps, TextFieldProps, TextProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
@@ -21,6 +22,7 @@ export declare type VerificationFormOverridesProps = {
     VerificationForm?: PrimitiveOverrideProps<FlexProps>;
     Content?: PrimitiveOverrideProps<FlexProps>;
     "Edit Profile"?: PrimitiveOverrideProps<FlexProps>;
+    MyIcon?: MyIconProps;
     "We Emailed You"?: PrimitiveOverrideProps<TextProps>;
     "Verification Text Frame"?: PrimitiveOverrideProps<FlexProps>;
     "Your code is on the way. To proceed, enter the code you received. It may take a minute to arrive."?: PrimitiveOverrideProps<TextProps>;
@@ -29,7 +31,7 @@ export declare type VerificationFormOverridesProps = {
     "Error Frame"?: PrimitiveOverrideProps<FlexProps>;
     ErrorMessage?: PrimitiveOverrideProps<TextProps>;
     "Confirm Resend Frame"?: PrimitiveOverrideProps<FlexProps>;
-    SignInButton?: PrimitiveOverrideProps<ButtonProps>;
+    ConfirmBtn?: PrimitiveOverrideProps<ButtonProps>;
     ResendBtn?: PrimitiveOverrideProps<ButtonProps>;
 } & EscapeHatchProps;
 export declare type VerificationFormProps = React.PropsWithChildren<Partial<FlexProps> & {

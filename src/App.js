@@ -1,16 +1,23 @@
 import './global.css';
 import './App.css';
 import {
-  Pets, MarketingFooter, NavBarHeader, RegisterDogForm, PetDetails
+  Pets, MarketingFooter, NavBarHeader, RegisterDogForm, PetDetails,
+  SignInForm
  } from './ui-components';
 import { useState } from 'react';
 import ForegroundOverlay from './ForegroundOverlay';
+import SignIn from './SignIn';
+import AuthManager from './AuthManager';
 
  
 function App() {
+  const [username, setUsername] = useState(null);
   const [showForm, setShowForm] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
   const [pet, setPet] = useState();
+  const [showAuth, setShowAuth] = useState(false);
+  const [signedIn, setSignedIn] = useState(false);
+  const [verified, setVerified] = useState(false);
 
   const registerDogFormOverrides = {
     image: {
@@ -39,7 +46,7 @@ function App() {
     },
     "SignButton": {
       onClick: () => {
-        alert("Hello!");
+        setShowAuth(true);
       },
       
     }
@@ -65,6 +72,13 @@ function App() {
       }
     }
   };
+
+  const appProps = {
+    showAuth,
+    setShowAuth,
+    username,
+    setUsername
+  }
   return (
     <div className="App">
       <NavBarHeader width={"100%"} overrides={ navbarOverrides }/>
@@ -89,6 +103,7 @@ function App() {
           }}
         />
       </ForegroundOverlay>
+      <AuthManager appProps={appProps}/>
     </div>
   );
 }

@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { View } from '@aws-amplify/ui-react';
 import { CSSTransition } from 'react-transition-group';
 
-const ForegroundOverlay = ({ children, isVisible, onClose }) => {
+const ForegroundOverlay = ({ children, isVisible, onClose, onCloseComplete }) => {
+  const handleClose = useCallback(() => {
+    onClose();
+  }, [onClose]);
+
+  const handleExited = useCallback(() => {
+    if (onCloseComplete) {
+      onCloseComplete();
+    }
+  }, [onCloseComplete]);
+
   return (
     <CSSTransition
       in={isVisible}
       timeout={300}
       classNames="overlay"
       unmountOnExit
+      onExited={handleExited}
     >
       <View
         position="fixed"
@@ -21,7 +32,7 @@ const ForegroundOverlay = ({ children, isVisible, onClose }) => {
         justifyContent="center"
         alignItems="center"
         zIndex="1000"
-        onClick={onClose}
+        onClick={handleClose}
       >
         <CSSTransition
           in={isVisible}
