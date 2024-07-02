@@ -1,29 +1,59 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { signIn } from "aws-amplify/auth";
 import { SignInForm } from "./ui-components";
+import { resendSignUpCode } from "aws-amplify/auth";
+import { Spinner } from "./Spinner";
 
 function SignIn({ authProps }) {
-    const {showAuth, setShowAuth, showSignIn, setShowSignIn, showRegister, setShowRegister} = authProps;
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const {setShowAuth, setUsername, setShowSignIn, setShowRegister, setShowVerification} = authProps;
+    const [errorMessage, setErrorMessage] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+    const usernameRef = useRef(null);
+    const passwordRef = useRef(null);
 
-    const handleSignIn = async () => {
+    const handleSubmit = async () => {
+        setErrorMessage('');
+        setIsLoading(true);
+        const username = usernameRef.current.value;
+        const password = passwordRef.current.value;
         try {
-            const user = await signIn(username, password);
-            console.log('Sign-in successful:', user);
-        } catch (error) {
-            console.error('Error signing in:', error);
-            if (error.code === 'UserNotConfirmedException') {
-            // Handle unconfirmed user
-            } else if (error.code === 'PasswordResetRequiredException') {
-            // Handle password reset required
-            } else if (error.code === 'NotAuthorizedException') {
-            // Handle incorrect username or password
+            console.log(username);
+            console.log(password);
+            const { isSignedIn, nextStep } = await signIn({ username, password });
+            setIsLoading(false);
+            if (isSignedIn) {
+                setUsername(username);
+                setShowAuth(false);
             } else {
-            // Handle other errors
+                console.log(nextStep);
+                if (nextStep.signInStep == 'CONFIRM_SIGN_UP') {
+                    resendSignUpCode({username});
+                    setUsername(username)
+                    setShowSignIn(false);
+                    setShowVerification(true);
+                } else {
+                    setErrorMessage('An unexpected authentication step')
+                }
+            }
+        } catch (error) {
+            setIsLoading(false);
+            console.error('Error signing in:', error);
+            console.error('Error details:', JSON.stringify(error, null, 2));
+      
+            if (error.name === 'NotAuthorizedException') {
+                setErrorMessage('* Incorrect username or password. Please try again.');
+            } else if (error.name === 'UserNotConfirmedException') {
+                resendSignUpCode({username});
+                setUsername(username)
+                setShowSignIn(false);
+                setShowVerification(true);
+            } else if (error.name === 'UserNotFoundException') {
+                setErrorMessage('* Incorrect username or password. Please try again.');
+            } else {
+                setErrorMessage('* An error occurred during sign in.');
             }
         }
-    };
+      };
     
     const signInFormOverrides = {
         "Not a member?": {
@@ -46,6 +76,21 @@ function SignIn({ authProps }) {
             style: {
                 cursor: "pointer"
             }
+        },
+        "Username":{
+            ref: usernameRef
+        },
+        "Password": {
+            ref: passwordRef
+        },
+        "SignInButton": {
+            onClick: handleSubmit,
+            children: isLoading ? <Spinner/> : "Sign In"
+        },
+        "ErrorMessage": {
+            children: errorMessage,
+            color: errorMessage ? "rgba(255,0,0,1)" : "rgba(255,255,255,1)",
+            fontWeight: 200
         }
     }
     return (

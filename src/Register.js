@@ -1,10 +1,12 @@
 import { useState, useRef } from "react";
 import { RegisterForm } from "./ui-components";
 import { signUp } from "aws-amplify/auth";
+import { Spinner } from "./Spinner";
 
 function Register({authProps}) {
-    const {setShowAuth, setShowSignIn, setShowRegister, setShowVerification} = authProps;
+    const {setShowAuth, setUsername, setShowSignIn, setShowRegister, setShowVerification} = authProps;
     const [errorMessage, setErrorMessage] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
     const usernameRef = useRef(null);
     const passwordRef = useRef(null);
     const confirmPasswordRef = useRef(null);
@@ -28,8 +30,8 @@ function Register({authProps}) {
         return re.test(String(email).toLowerCase());
     };
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
+    const handleSubmit = async () => {
+        setIsLoading(true);
         const username = usernameRef.current.value;
         const password = passwordRef.current.value;
         const confirmPassword = confirmPasswordRef.current.value;
@@ -64,10 +66,13 @@ function Register({authProps}) {
                     }
                 }
             });
+            setIsLoading(false);
             console.log('Signup successful. Verification required.');
+            setUsername(username);
             setShowRegister(false);
             setShowVerification(true);
         } catch (error) {
+            setIsLoading(false);
             console.error('Error signing up:', error);
             if (error.name === 'UsernameExistsException') {
                 setErrorMessage('* This username is already taken. Please choose another.');
@@ -81,7 +86,8 @@ function Register({authProps}) {
 
     const registerFormOverrides = {
         "RegisterBtn": {
-            onClick: handleSubmit
+            onClick: handleSubmit,
+            children: isLoading ? <Spinner/> : "Register"
         },
         "MyIcon": {
             onClick: () => {

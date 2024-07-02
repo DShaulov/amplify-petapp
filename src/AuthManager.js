@@ -36,7 +36,7 @@ function AuthManager({appProps}) {
         <ForegroundOverlay isVisible={showAuth} onClose={() => {setShowAuth(false)}} onCloseComplete={handleCloseComplete}>
             {showSignIn && <SignIn authProps={authProps}/>}
             {showRegister && <Register authProps={authProps}/>}
-            {showVerification && <Verification/>}
+            {showVerification && <Verification authProps={authProps}/>}
         </ForegroundOverlay>
     );
 };
