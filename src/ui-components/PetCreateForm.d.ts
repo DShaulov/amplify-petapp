@@ -27,6 +27,8 @@ export declare type PetCreateFormInputValues = {
     breed?: string;
     about?: string;
     image?: string;
+    gender?: string;
+    contact?: string;
     color?: string;
 };
 export declare type PetCreateFormValidationValues = {
@@ -35,6 +37,8 @@ export declare type PetCreateFormValidationValues = {
     breed?: ValidationFunction<string>;
     about?: ValidationFunction<string>;
     image?: ValidationFunction<string>;
+    gender?: ValidationFunction<string>;
+    contact?: ValidationFunction<string>;
     color?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
@@ -45,6 +49,8 @@ export declare type PetCreateFormOverridesProps = {
     breed?: PrimitiveOverrideProps<TextFieldProps>;
     about?: PrimitiveOverrideProps<TextFieldProps>;
     image?: PrimitiveOverrideProps<TextFieldProps>;
+    gender?: PrimitiveOverrideProps<TextFieldProps>;
+    contact?: PrimitiveOverrideProps<TextFieldProps>;
     color?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type PetCreateFormProps = React.PropsWithChildren<{

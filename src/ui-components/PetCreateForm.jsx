@@ -27,6 +27,8 @@ export default function PetCreateForm(props) {
     breed: "",
     about: "",
     image: "",
+    gender: "",
+    contact: "",
     color: "",
   };
   const [name, setName] = React.useState(initialValues.name);
@@ -34,6 +36,8 @@ export default function PetCreateForm(props) {
   const [breed, setBreed] = React.useState(initialValues.breed);
   const [about, setAbout] = React.useState(initialValues.about);
   const [image, setImage] = React.useState(initialValues.image);
+  const [gender, setGender] = React.useState(initialValues.gender);
+  const [contact, setContact] = React.useState(initialValues.contact);
   const [color, setColor] = React.useState(initialValues.color);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
@@ -42,15 +46,19 @@ export default function PetCreateForm(props) {
     setBreed(initialValues.breed);
     setAbout(initialValues.about);
     setImage(initialValues.image);
+    setGender(initialValues.gender);
+    setContact(initialValues.contact);
     setColor(initialValues.color);
     setErrors({});
   };
   const validations = {
     name: [{ type: "Required" }],
-    age: [],
-    breed: [],
-    about: [],
+    age: [{ type: "Required" }],
+    breed: [{ type: "Required" }],
+    about: [{ type: "Required" }],
     image: [],
+    gender: [],
+    contact: [{ type: "Email" }],
     color: [],
   };
   const runValidationTasks = async (
@@ -84,6 +92,8 @@ export default function PetCreateForm(props) {
           breed,
           about,
           image,
+          gender,
+          contact,
           color,
         };
         const validationResponses = await Promise.all(
@@ -144,6 +154,8 @@ export default function PetCreateForm(props) {
               breed,
               about,
               image,
+              gender,
+              contact,
               color,
             };
             const result = onChange(modelFields);
@@ -161,7 +173,7 @@ export default function PetCreateForm(props) {
       ></TextField>
       <TextField
         label="Age"
-        isRequired={false}
+        isRequired={true}
         isReadOnly={false}
         type="number"
         step="any"
@@ -177,6 +189,8 @@ export default function PetCreateForm(props) {
               breed,
               about,
               image,
+              gender,
+              contact,
               color,
             };
             const result = onChange(modelFields);
@@ -194,7 +208,7 @@ export default function PetCreateForm(props) {
       ></TextField>
       <TextField
         label="Breed"
-        isRequired={false}
+        isRequired={true}
         isReadOnly={false}
         value={breed}
         onChange={(e) => {
@@ -206,6 +220,8 @@ export default function PetCreateForm(props) {
               breed: value,
               about,
               image,
+              gender,
+              contact,
               color,
             };
             const result = onChange(modelFields);
@@ -223,7 +239,7 @@ export default function PetCreateForm(props) {
       ></TextField>
       <TextField
         label="About"
-        isRequired={false}
+        isRequired={true}
         isReadOnly={false}
         value={about}
         onChange={(e) => {
@@ -235,6 +251,8 @@ export default function PetCreateForm(props) {
               breed,
               about: value,
               image,
+              gender,
+              contact,
               color,
             };
             const result = onChange(modelFields);
@@ -264,6 +282,8 @@ export default function PetCreateForm(props) {
               breed,
               about,
               image: value,
+              gender,
+              contact,
               color,
             };
             const result = onChange(modelFields);
@@ -280,6 +300,68 @@ export default function PetCreateForm(props) {
         {...getOverrideProps(overrides, "image")}
       ></TextField>
       <TextField
+        label="Gender"
+        isRequired={false}
+        isReadOnly={false}
+        value={gender}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              name,
+              age,
+              breed,
+              about,
+              image,
+              gender: value,
+              contact,
+              color,
+            };
+            const result = onChange(modelFields);
+            value = result?.gender ?? value;
+          }
+          if (errors.gender?.hasError) {
+            runValidationTasks("gender", value);
+          }
+          setGender(value);
+        }}
+        onBlur={() => runValidationTasks("gender", gender)}
+        errorMessage={errors.gender?.errorMessage}
+        hasError={errors.gender?.hasError}
+        {...getOverrideProps(overrides, "gender")}
+      ></TextField>
+      <TextField
+        label="Contact"
+        isRequired={false}
+        isReadOnly={false}
+        value={contact}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              name,
+              age,
+              breed,
+              about,
+              image,
+              gender,
+              contact: value,
+              color,
+            };
+            const result = onChange(modelFields);
+            value = result?.contact ?? value;
+          }
+          if (errors.contact?.hasError) {
+            runValidationTasks("contact", value);
+          }
+          setContact(value);
+        }}
+        onBlur={() => runValidationTasks("contact", contact)}
+        errorMessage={errors.contact?.errorMessage}
+        hasError={errors.contact?.hasError}
+        {...getOverrideProps(overrides, "contact")}
+      ></TextField>
+      <TextField
         label="Color"
         isRequired={false}
         isReadOnly={false}
@@ -293,6 +375,8 @@ export default function PetCreateForm(props) {
               breed,
               about,
               image,
+              gender,
+              contact,
               color: value,
             };
             const result = onChange(modelFields);

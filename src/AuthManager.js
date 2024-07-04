@@ -6,7 +6,7 @@ import { useCallback } from "react";
 import Verification from "./Verification";
 
 function AuthManager({appProps}) {
-    const {showAuth, setShowAuth, username, setUsername} = appProps;
+    const {showAuth, setShowAuth, username, setUsername, setSignedIn} = appProps;
     const [showSignIn, setShowSignIn] = useState(true);
     const [showRegister, setShowRegister] = useState(false);
     const [showVerification, setShowVerification] = useState(false);
@@ -30,7 +30,8 @@ function AuthManager({appProps}) {
         setShowSignIn,
         setShowRegister,
         setShowVerification,
-        username
+        username,
+        setSignedIn
     }
     return (
         <ForegroundOverlay isVisible={showAuth} onClose={() => {setShowAuth(false)}} onCloseComplete={handleCloseComplete}>

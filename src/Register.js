@@ -111,8 +111,8 @@ function Register({authProps}) {
             }
         },
         "Username": {ref: usernameRef},
-        "Password": {ref: passwordRef},
-        "ConfirmPassword": {ref: confirmPasswordRef},
+        "Password": {ref: passwordRef, type: "password"},
+        "ConfirmPassword": {ref: confirmPasswordRef, type: "password"},
         "Email": {ref: emailRef},
         "ErrorMessage": {
             children: errorMessage,

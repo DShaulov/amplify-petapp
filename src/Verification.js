@@ -4,21 +4,27 @@ import { confirmSignUp, resendSignUpCode } from 'aws-amplify/auth';
 
 
 function Verification({authProps}) {
-    const {setShowAuth, setShowSignIn, setShowRegister, setShowVerification, username} = authProps;
+    const {setShowAuth, setShowSignIn, setShowRegister, setShowVerification, username, setSignedIn} = authProps;
     const [errorMessage, setErrorMessage] = useState('');
     const [resendMessage, setResendMessage] = useState('');
-    const [verificationCode, setVerificationCode] = useRef(null);
+    const verificationCode = useRef(null);
     const [showResend, setShowResend] = useState(false);
     const handleVerification = async () => {
         try {
+            const code = verificationCode.current.value
             setShowResend(false);
             const { isSignUpComplete, nextStep } = await confirmSignUp({
                 username,
-                confirmationCode: verificationCode
+                confirmationCode: code
             });
     
             if (isSignUpComplete) {
                 console.log('Verification successful');
+                setSignedIn(true);
+                setShowAuth(false);
+                setShowSignIn(true);
+                setShowRegister(false);
+                setShowVerification(false);
                 setErrorMessage('');
             } else {
                 console.log('Additional steps required:', nextStep);
@@ -30,13 +36,16 @@ function Verification({authProps}) {
     };
 
     const handleResendCode = async () => {
+        setShowResend(true);
         try {
             await resendSignUpCode({ username });
             setResendMessage('Verification code resent successfully.');
             setErrorMessage(''); // Clear any existing errors
+            setShowResend(false);
         } catch (error) {
             setErrorMessage('Failed to resend verification code. Please try again.');
             console.error('Resend error:', error);
+            setShowResend(false);
         }
     };
     
@@ -59,7 +68,11 @@ function Verification({authProps}) {
         "ResendBtn":{
             onClick: handleResendCode
         },
-        "Code": {ref: verificationCode},
+        "Code": {
+            ref: verificationCode,
+            label: "",
+            textAlign: "left"
+        },
         "ErrorMessage": showResend ? resendOverride : errorOverride
     }
 

@@ -216,6 +216,7 @@ export default function VerificationForm(props) {
             width="unset"
             height="unset"
             shrink="0"
+            backgroundColor="rgba(191,64,64,1)"
             size="default"
             isDisabled={false}
             variation="primary"

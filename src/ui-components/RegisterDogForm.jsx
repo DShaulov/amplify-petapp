@@ -14,20 +14,21 @@ import {
 import { Pet } from "../models";
 import { schema } from "../models/schema";
 import MyIcon from "./MyIcon";
-import { Button, Flex, Image, Text, TextField } from "@aws-amplify/ui-react";
+import {
+  Button,
+  Flex,
+  Image,
+  Text,
+  TextAreaField,
+  TextField,
+} from "@aws-amplify/ui-react";
 export default function RegisterDogForm(props) {
   const { overrides, ...rest } = props;
   const [nameValue, setNameValue] = useStateMutationAction("");
   const [ageValue, setAgeValue] = useStateMutationAction("");
   const [breedValue, setBreedValue] = useStateMutationAction("");
-  const [aboutValue, setAboutValue] = useStateMutationAction("");
-  const saveButtonOnClick = useDataStoreCreateAction({
-    fields: {
-      name: nameValue,
-      age: ageValue,
-      breed: breedValue,
-      about: aboutValue,
-    },
+  const registerBtnOnClick = useDataStoreCreateAction({
+    fields: { name: nameValue, age: ageValue, breed: breedValue },
     model: Pet,
     schema: schema,
   });
@@ -36,7 +37,7 @@ export default function RegisterDogForm(props) {
       gap="16px"
       direction="column"
       width="640px"
-      height="unset"
+      height="1009px"
       justifyContent="flex-start"
       alignItems="flex-start"
       position="relative"
@@ -49,12 +50,11 @@ export default function RegisterDogForm(props) {
       <Flex
         gap="24px"
         direction="column"
-        width="unset"
-        height="unset"
+        width="640px"
+        height="1009px"
         justifyContent="center"
         alignItems="center"
         shrink="0"
-        alignSelf="stretch"
         position="relative"
         padding="24px 24px 24px 24px"
         {...getOverrideProps(overrides, "Content")}
@@ -111,19 +111,18 @@ export default function RegisterDogForm(props) {
         <Flex
           gap="16px"
           direction="row"
-          width="unset"
-          height="unset"
+          width="568px"
+          height="158px"
           justifyContent="center"
           alignItems="center"
           shrink="0"
-          alignSelf="stretch"
           position="relative"
           padding="0px 0px 0px 0px"
           {...getOverrideProps(overrides, "Profile")}
         >
           <Image
-            width="96px"
-            height="96px"
+            width="159px"
+            height="158px"
             display="block"
             gap="unset"
             alignItems="unset"
@@ -133,12 +132,13 @@ export default function RegisterDogForm(props) {
             borderRadius="160px"
             padding="0px 0px 0px 0px"
             objectFit="cover"
-            {...getOverrideProps(overrides, "image")}
+            src="https://amplify-petapp-storage-6f5fa300511cc-staging.s3.eu-north-1.amazonaws.com/public/dog_profile.png"
+            {...getOverrideProps(overrides, "ProfileImage")}
           ></Image>
           <Text
             fontFamily="Inter"
             fontSize="16px"
-            fontWeight="400"
+            fontWeight="700"
             color="rgba(13,26,38,1)"
             lineHeight="22px"
             textAlign="left"
@@ -154,8 +154,8 @@ export default function RegisterDogForm(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="Upload New Image"
-            {...getOverrideProps(overrides, "Upload New Image")}
+            children="Upload Image"
+            {...getOverrideProps(overrides, "UploadImage")}
           ></Text>
         </Flex>
         <Flex
@@ -225,6 +225,32 @@ export default function RegisterDogForm(props) {
           <TextField
             width="unset"
             height="unset"
+            label="Gender"
+            shrink="0"
+            alignSelf="stretch"
+            placeholder=""
+            size="default"
+            isDisabled={false}
+            labelHidden={false}
+            variation="default"
+            {...getOverrideProps(overrides, "Gender")}
+          ></TextField>
+          <TextField
+            width="unset"
+            height="unset"
+            label="Color"
+            shrink="0"
+            alignSelf="stretch"
+            placeholder=""
+            size="default"
+            isDisabled={false}
+            labelHidden={false}
+            variation="default"
+            {...getOverrideProps(overrides, "Color")}
+          ></TextField>
+          <TextAreaField
+            width="unset"
+            height="unset"
             label="About"
             shrink="0"
             alignSelf="stretch"
@@ -233,12 +259,48 @@ export default function RegisterDogForm(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
-            value={aboutValue}
-            onChange={(event) => {
-              setAboutValue(event.target.value);
-            }}
-            {...getOverrideProps(overrides, "About")}
-          ></TextField>
+            {...getOverrideProps(overrides, "AboutTextArea")}
+          ></TextAreaField>
+        </Flex>
+        <Flex
+          gap="10px"
+          direction="row"
+          width="unset"
+          height="35px"
+          justifyContent="center"
+          alignItems="center"
+          overflow="hidden"
+          shrink="0"
+          alignSelf="stretch"
+          position="relative"
+          padding="0px 0px 0px 0px"
+          backgroundColor="rgba(255,255,255,1)"
+          {...getOverrideProps(overrides, "Error Frame")}
+        >
+          <Text
+            fontFamily="Inter"
+            fontSize="16px"
+            fontWeight="700"
+            color="rgba(255,255,255,1)"
+            lineHeight="24px"
+            textAlign="center"
+            display="block"
+            direction="column"
+            justifyContent="unset"
+            width="unset"
+            height="unset"
+            gap="unset"
+            alignItems="unset"
+            grow="1"
+            shrink="1"
+            basis="0"
+            alignSelf="stretch"
+            position="relative"
+            padding="0px 0px 0px 0px"
+            whiteSpace="pre-wrap"
+            children="Error"
+            {...getOverrideProps(overrides, "ErrorMessage")}
+          ></Text>
         </Flex>
         <Flex
           gap="11px"
@@ -258,24 +320,15 @@ export default function RegisterDogForm(props) {
             width="unset"
             height="unset"
             shrink="0"
+            backgroundColor="rgba(191,64,64,1)"
             size="default"
             isDisabled={false}
             variation="primary"
-            children="Save"
+            children="Register"
             onClick={() => {
-              saveButtonOnClick();
+              registerBtnOnClick();
             }}
-            {...getOverrideProps(overrides, "Save Button")}
-          ></Button>
-          <Button
-            width="unset"
-            height="unset"
-            shrink="0"
-            size="default"
-            isDisabled={true}
-            variation="primary"
-            children="Update"
-            {...getOverrideProps(overrides, "Update Button")}
+            {...getOverrideProps(overrides, "RegisterBtn")}
           ></Button>
         </Flex>
       </Flex>

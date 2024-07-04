@@ -4,11 +4,11 @@ import {
   Pets, MarketingFooter, NavBarHeader, RegisterDogForm, PetDetails,
   SignInForm
  } from './ui-components';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ForegroundOverlay from './ForegroundOverlay';
-import SignIn from './SignIn';
+import { getCurrentUser, signOut } from 'aws-amplify/auth';
 import AuthManager from './AuthManager';
-
+import RegisterDog from './RegisterDog';
  
 function App() {
   const [username, setUsername] = useState(null);
@@ -19,36 +19,55 @@ function App() {
   const [signedIn, setSignedIn] = useState(false);
   const [verified, setVerified] = useState(false);
 
-  const registerDogFormOverrides = {
-    image: {
-      src: 'https://img.icons8.com/color/50/000000/dog'
-    },
-    "MyIcon": {
-      onClick: () => {
-        setShowForm(false);
-      },
-      style: {
-        cursor: "pointer"
-      }
+  const checkUserSignIn = async () => {
+    try {
+      const user = await getCurrentUser();
+      console.log('User is signed in:', user);
+      return true;
+    } catch (error) {
+      console.log('User is not signed in');
+      return false;
     }
+  }
+
+  useEffect(() => {
+    const checkAuthStatus = async () => {
+      const authStatus = await checkUserSignIn();
+      setSignedIn(authStatus);
+    }
+    checkAuthStatus();
+  }, []);
+
+  const handleSignIn = () => {
+    setShowAuth(true);
   };
+  const handleSignOut = async () => {
+    try {
+      await signOut();
+      setSignedIn(false);
+      console.log('User signed out successfully')
+    } catch (error) {
+      console.log("Error: ", error);
+    }
+  }
+
+  
   const navbarOverrides = {
     image: {
       src: 'https://img.icons8.com/color/50/000000/dog'
     },
-    "Add Pet": {
+    "RegisterDog": {
       style: {
         cursor: "pointer"
       },
       onClick: () => {
         setShowForm(!showForm);
-      }
+      },
+      display: signedIn ? "block" : "none"
     },
     "SignButton": {
-      onClick: () => {
-        setShowAuth(true);
-      },
-      
+      onClick: signedIn ? handleSignOut : handleSignIn,
+      children: signedIn ? 'Sign Out' : 'Sign In'
     }
   };
   const petsOverrideItems = ({item, index}) => ({
@@ -77,7 +96,12 @@ function App() {
     showAuth,
     setShowAuth,
     username,
-    setUsername
+    setUsername,
+    setSignedIn
+  }
+  const registerProps = {
+    showForm,
+    setShowForm
   }
   return (
     <div className="App">
@@ -95,14 +119,7 @@ function App() {
           }}
         />
       </ForegroundOverlay>
-      <ForegroundOverlay isVisible={showForm} onClose={() => setShowForm(false)}>
-        <RegisterDogForm 
-          overrides={ registerDogFormOverrides } 
-          style={{
-            textAlign: "left"
-          }}
-        />
-      </ForegroundOverlay>
+      <RegisterDog registerProps={registerProps}/>
       <AuthManager appProps={appProps}/>
     </div>
   );

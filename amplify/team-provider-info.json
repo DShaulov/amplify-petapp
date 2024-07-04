@@ -14,6 +14,9 @@
     "categories": {
       "auth": {
         "amplifypetapp": {}
+      },
+      "storage": {
+        "s3amplifypetappstorage6f5fa300": {}
       }
     }
   }

@@ -5,7 +5,7 @@ import { resendSignUpCode } from "aws-amplify/auth";
 import { Spinner } from "./Spinner";
 
 function SignIn({ authProps }) {
-    const {setShowAuth, setUsername, setShowSignIn, setShowRegister, setShowVerification} = authProps;
+    const {setShowAuth, setUsername, setShowSignIn, setShowRegister, setShowVerification, setSignedIn} = authProps;
     const [errorMessage, setErrorMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const usernameRef = useRef(null);
@@ -16,17 +16,24 @@ function SignIn({ authProps }) {
         setIsLoading(true);
         const username = usernameRef.current.value;
         const password = passwordRef.current.value;
+        if (username === '') {
+            setErrorMessage('* Username cannot be empty');
+            setIsLoading(false);
+            return;
+        }
         try {
-            console.log(username);
-            console.log(password);
             const { isSignedIn, nextStep } = await signIn({ username, password });
             setIsLoading(false);
             if (isSignedIn) {
                 setUsername(username);
+                setSignedIn(true);
                 setShowAuth(false);
+                setShowVerification(false);
+                setShowRegister(false);
+                setShowSignIn(true);
             } else {
                 console.log(nextStep);
-                if (nextStep.signInStep == 'CONFIRM_SIGN_UP') {
+                if (nextStep.signInStep === 'CONFIRM_SIGN_UP') {
                     resendSignUpCode({username});
                     setUsername(username)
                     setShowSignIn(false);
@@ -81,7 +88,8 @@ function SignIn({ authProps }) {
             ref: usernameRef
         },
         "Password": {
-            ref: passwordRef
+            ref: passwordRef,
+            type: "password"
         },
         "SignInButton": {
             onClick: handleSubmit,

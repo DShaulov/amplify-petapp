@@ -21,27 +21,41 @@ export const schema = {
                     "name": "age",
                     "isArray": false,
                     "type": "Int",
-                    "isRequired": false,
+                    "isRequired": true,
                     "attributes": []
                 },
                 "breed": {
                     "name": "breed",
                     "isArray": false,
                     "type": "String",
-                    "isRequired": false,
+                    "isRequired": true,
                     "attributes": []
                 },
                 "about": {
                     "name": "about",
                     "isArray": false,
                     "type": "String",
-                    "isRequired": false,
+                    "isRequired": true,
                     "attributes": []
                 },
                 "image": {
                     "name": "image",
                     "isArray": false,
                     "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "gender": {
+                    "name": "gender",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "contact": {
+                    "name": "contact",
+                    "isArray": false,
+                    "type": "AWSEmail",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -98,5 +112,5 @@ export const schema = {
     "enums": {},
     "nonModels": {},
     "codegenVersion": "3.4.4",
-    "version": "8d1b97f811ce77477c3e3994288f623b"
+    "version": "7f92be0f8020aa2d18c62b2fcda0443a"
 };
