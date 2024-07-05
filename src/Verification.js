@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { VerificationForm } from "./ui-components";
 import { confirmSignUp, resendSignUpCode } from 'aws-amplify/auth';
+import { Spinner } from "./Spinner";
 
 
 function Verification({authProps}) {
@@ -9,8 +10,11 @@ function Verification({authProps}) {
     const [resendMessage, setResendMessage] = useState('');
     const verificationCode = useRef(null);
     const [showResend, setShowResend] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [isResendLoading, setIsResendLoading] = useState(false);
     const handleVerification = async () => {
         try {
+            setIsLoading(true);
             const code = verificationCode.current.value
             setShowResend(false);
             const { isSignUpComplete, nextStep } = await confirmSignUp({
@@ -25,27 +29,32 @@ function Verification({authProps}) {
                 setShowSignIn(true);
                 setShowRegister(false);
                 setShowVerification(false);
+                setIsLoading(false);
                 setErrorMessage('');
             } else {
                 console.log('Additional steps required:', nextStep);
             }
         } catch (error) {
             console.error('Error during verification:', error);
-            setErrorMessage('* Verification failed. Please try again.');
+            setErrorMessage('Verification failed. Please try again.');
+            setIsLoading(false);
         }
     };
 
     const handleResendCode = async () => {
         setShowResend(true);
+        setIsResendLoading(true);
         try {
             await resendSignUpCode({ username });
             setResendMessage('Verification code resent successfully.');
             setErrorMessage(''); // Clear any existing errors
             setShowResend(false);
+            setIsResendLoading(false);
         } catch (error) {
             setErrorMessage('Failed to resend verification code. Please try again.');
             console.error('Resend error:', error);
             setShowResend(false);
+            setIsResendLoading(false);
         }
     };
     
@@ -63,17 +72,24 @@ function Verification({authProps}) {
 
     const verificationFormOverrides = {
         "ConfirmBtn": {
-            onClick: handleVerification
+            onClick: handleVerification,
+            children: isLoading ? <Spinner/> : "Confirm"
         },
         "ResendBtn":{
-            onClick: handleResendCode
+            onClick: handleResendCode,
+            children: isResendLoading ? <Spinner/> : "Resend"
         },
         "Code": {
             ref: verificationCode,
             label: "",
             textAlign: "left"
         },
-        "ErrorMessage": showResend ? resendOverride : errorOverride
+        "ErrorMessage": {
+            display: errorMessage ? 'flex' : 'none'
+        },
+        'ErrorBody': {
+            children: errorMessage
+        },
     }
 
     return (

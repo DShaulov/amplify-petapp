@@ -5,7 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { ButtonProps, FlexProps, IconProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
+import { ButtonProps, FlexProps, IconProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -32,7 +32,7 @@ export declare type NavBarHeaderOverridesProps = {
     Vector3878538?: PrimitiveOverrideProps<IconProps>;
     Vector3878539?: PrimitiveOverrideProps<IconProps>;
     "Logo Text"?: PrimitiveOverrideProps<IconProps>;
-    RegisterDog?: PrimitiveOverrideProps<TextProps>;
+    RegisterDog?: PrimitiveOverrideProps<IconProps>;
     "Frame 32129767081"?: PrimitiveOverrideProps<FlexProps>;
     "Frame 437"?: PrimitiveOverrideProps<FlexProps>;
     SignButton?: PrimitiveOverrideProps<ButtonProps>;

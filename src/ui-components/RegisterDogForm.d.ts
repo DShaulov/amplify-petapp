@@ -6,7 +6,7 @@
 
 import * as React from "react";
 import { MyIconProps } from "./MyIcon";
-import { ButtonProps, FlexProps, ImageProps, TextAreaFieldProps, TextFieldProps, TextProps } from "@aws-amplify/ui-react";
+import { ButtonProps, FlexProps, IconProps, ImageProps, SelectFieldProps, StepperFieldProps, TextAreaFieldProps, TextFieldProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -30,12 +30,18 @@ export declare type RegisterDogFormOverridesProps = {
     Forms?: PrimitiveOverrideProps<FlexProps>;
     Name?: PrimitiveOverrideProps<TextFieldProps>;
     Breed?: PrimitiveOverrideProps<TextFieldProps>;
-    Age?: PrimitiveOverrideProps<TextFieldProps>;
-    Gender?: PrimitiveOverrideProps<TextFieldProps>;
     Color?: PrimitiveOverrideProps<TextFieldProps>;
+    "Age-Gender Frame"?: PrimitiveOverrideProps<FlexProps>;
+    Age?: PrimitiveOverrideProps<StepperFieldProps>;
+    Gender?: PrimitiveOverrideProps<SelectFieldProps>;
     AboutTextArea?: PrimitiveOverrideProps<TextAreaFieldProps>;
-    "Error Frame"?: PrimitiveOverrideProps<FlexProps>;
-    ErrorMessage?: PrimitiveOverrideProps<TextProps>;
+    ErrorMessage?: PrimitiveOverrideProps<FlexProps>;
+    "\uD83D\uDD12Icon"?: PrimitiveOverrideProps<ViewProps>;
+    Vector?: PrimitiveOverrideProps<IconProps>;
+    frame?: PrimitiveOverrideProps<FlexProps>;
+    content?: PrimitiveOverrideProps<FlexProps>;
+    heading?: PrimitiveOverrideProps<TextProps>;
+    ErrorBody?: PrimitiveOverrideProps<TextProps>;
     "Register Buttons"?: PrimitiveOverrideProps<FlexProps>;
     RegisterBtn?: PrimitiveOverrideProps<ButtonProps>;
 } & EscapeHatchProps;

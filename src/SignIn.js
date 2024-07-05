@@ -17,7 +17,12 @@ function SignIn({ authProps }) {
         const username = usernameRef.current.value;
         const password = passwordRef.current.value;
         if (username === '') {
-            setErrorMessage('* Username cannot be empty');
+            setErrorMessage('Username cannot be empty');
+            setIsLoading(false);
+            return;
+        }
+        if (password === '') {
+            setErrorMessage('Password cannot be empty');
             setIsLoading(false);
             return;
         }
@@ -48,16 +53,16 @@ function SignIn({ authProps }) {
             console.error('Error details:', JSON.stringify(error, null, 2));
       
             if (error.name === 'NotAuthorizedException') {
-                setErrorMessage('* Incorrect username or password. Please try again.');
+                setErrorMessage('Incorrect username or password. Please try again.');
             } else if (error.name === 'UserNotConfirmedException') {
                 resendSignUpCode({username});
                 setUsername(username)
                 setShowSignIn(false);
                 setShowVerification(true);
             } else if (error.name === 'UserNotFoundException') {
-                setErrorMessage('* Incorrect username or password. Please try again.');
+                setErrorMessage('Incorrect username or password. Please try again.');
             } else {
-                setErrorMessage('* An error occurred during sign in.');
+                setErrorMessage('An error occurred during sign in.');
             }
         }
       };
@@ -96,10 +101,11 @@ function SignIn({ authProps }) {
             children: isLoading ? <Spinner/> : "Sign In"
         },
         "ErrorMessage": {
-            children: errorMessage,
-            color: errorMessage ? "rgba(255,0,0,1)" : "rgba(255,255,255,1)",
-            fontWeight: 200
-        }
+            display: errorMessage ? 'flex' : 'none'
+        },
+        'ErrorBody': {
+            children: errorMessage
+        },
     }
     return (
         <SignInForm

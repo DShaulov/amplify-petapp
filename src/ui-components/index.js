@@ -6,6 +6,8 @@
 
 export { default as ActionCard } from "./ActionCard";
 export { default as Ampligram } from "./Ampligram";
+export { default as Banner } from "./Banner";
+export { default as BannerHolder } from "./BannerHolder";
 export { default as CTASection } from "./CTASection";
 export { default as CheckoutPayment } from "./CheckoutPayment";
 export { default as CommentCard } from "./CommentCard";
@@ -31,6 +33,7 @@ export { default as PetDetails } from "./PetDetails";
 export { default as PetProfile } from "./PetProfile";
 export { default as PetUpdateForm } from "./PetUpdateForm";
 export { default as Pets } from "./Pets";
+export { default as PetsAvailableTitle } from "./PetsAvailableTitle";
 export { default as ProductCard } from "./ProductCard";
 export { default as ProductDetail } from "./ProductDetail";
 export { default as RegisterDogForm } from "./RegisterDogForm";

@@ -17,15 +17,19 @@ import MyIcon from "./MyIcon";
 import {
   Button,
   Flex,
+  Icon,
   Image,
+  SelectField,
+  StepperField,
   Text,
   TextAreaField,
   TextField,
+  View,
 } from "@aws-amplify/ui-react";
 export default function RegisterDogForm(props) {
   const { overrides, ...rest } = props;
   const [nameValue, setNameValue] = useStateMutationAction("");
-  const [ageValue, setAgeValue] = useStateMutationAction("");
+  const [ageValue, setAgeValue] = useStateMutationAction(undefined);
   const [breedValue, setBreedValue] = useStateMutationAction("");
   const registerBtnOnClick = useDataStoreCreateAction({
     fields: { name: nameValue, age: ageValue, breed: breedValue },
@@ -37,7 +41,7 @@ export default function RegisterDogForm(props) {
       gap="16px"
       direction="column"
       width="640px"
-      height="1009px"
+      height="987px"
       justifyContent="flex-start"
       alignItems="flex-start"
       position="relative"
@@ -50,11 +54,12 @@ export default function RegisterDogForm(props) {
       <Flex
         gap="24px"
         direction="column"
-        width="640px"
-        height="1009px"
+        width="unset"
+        height="987px"
         justifyContent="center"
         alignItems="center"
         shrink="0"
+        alignSelf="stretch"
         position="relative"
         padding="24px 24px 24px 24px"
         {...getOverrideProps(overrides, "Content")}
@@ -161,12 +166,11 @@ export default function RegisterDogForm(props) {
         <Flex
           gap="16px"
           direction="column"
-          width="unset"
-          height="unset"
+          width="592px"
+          height="517px"
           justifyContent="flex-start"
           alignItems="flex-start"
           shrink="0"
-          alignSelf="stretch"
           position="relative"
           padding="0px 0px 0px 0px"
           {...getOverrideProps(overrides, "Forms")}
@@ -208,36 +212,6 @@ export default function RegisterDogForm(props) {
           <TextField
             width="unset"
             height="unset"
-            label="Age"
-            shrink="0"
-            alignSelf="stretch"
-            placeholder=""
-            size="default"
-            isDisabled={false}
-            labelHidden={false}
-            variation="default"
-            value={ageValue}
-            onChange={(event) => {
-              setAgeValue(event.target.value);
-            }}
-            {...getOverrideProps(overrides, "Age")}
-          ></TextField>
-          <TextField
-            width="unset"
-            height="unset"
-            label="Gender"
-            shrink="0"
-            alignSelf="stretch"
-            placeholder=""
-            size="default"
-            isDisabled={false}
-            labelHidden={false}
-            variation="default"
-            {...getOverrideProps(overrides, "Gender")}
-          ></TextField>
-          <TextField
-            width="unset"
-            height="unset"
             label="Color"
             shrink="0"
             alignSelf="stretch"
@@ -248,6 +222,53 @@ export default function RegisterDogForm(props) {
             variation="default"
             {...getOverrideProps(overrides, "Color")}
           ></TextField>
+          <Flex
+            gap="60px"
+            direction="row"
+            width="585px"
+            height="unset"
+            justifyContent="center"
+            alignItems="center"
+            overflow="hidden"
+            shrink="0"
+            position="relative"
+            padding="10px 10px 10px 10px"
+            backgroundColor="rgba(255,255,255,1)"
+            {...getOverrideProps(overrides, "Age-Gender Frame")}
+          >
+            <StepperField
+              width="unset"
+              height="unset"
+              label="Age"
+              grow="1"
+              shrink="1"
+              basis="0"
+              alignSelf="stretch"
+              size="default"
+              isDisabled={false}
+              labelHidden={false}
+              variation="default"
+              value={ageValue}
+              onStepChange={(value) => setAgeValue(value)}
+              {...getOverrideProps(overrides, "Age")}
+            ></StepperField>
+            <SelectField
+              width="unset"
+              height="unset"
+              label="Gender"
+              justifyContent="flex-start"
+              grow="1"
+              shrink="1"
+              basis="0"
+              alignSelf="stretch"
+              placeholder=""
+              size="default"
+              isDisabled={false}
+              labelHidden={false}
+              variation="default"
+              {...getOverrideProps(overrides, "Gender")}
+            ></SelectField>
+          </Flex>
           <TextAreaField
             width="unset"
             height="unset"
@@ -263,44 +284,127 @@ export default function RegisterDogForm(props) {
           ></TextAreaField>
         </Flex>
         <Flex
-          gap="10px"
+          gap="16px"
           direction="row"
-          width="unset"
-          height="35px"
+          width="558px"
+          height="86px"
           justifyContent="center"
           alignItems="center"
-          overflow="hidden"
           shrink="0"
-          alignSelf="stretch"
           position="relative"
-          padding="0px 0px 0px 0px"
-          backgroundColor="rgba(255,255,255,1)"
-          {...getOverrideProps(overrides, "Error Frame")}
+          padding="12px 16px 12px 16px"
+          backgroundColor="rgba(252,233,233,1)"
+          {...getOverrideProps(overrides, "ErrorMessage")}
         >
-          <Text
-            fontFamily="Inter"
-            fontSize="16px"
-            fontWeight="700"
-            color="rgba(255,255,255,1)"
-            lineHeight="24px"
-            textAlign="center"
+          <View
+            width="24px"
+            height="24px"
             display="block"
-            direction="column"
-            justifyContent="unset"
-            width="unset"
-            height="unset"
             gap="unset"
             alignItems="unset"
+            justifyContent="unset"
+            shrink="0"
+            position="relative"
+            padding="0px 0px 0px 0px"
+            {...getOverrideProps(overrides, "\uD83D\uDD12Icon")}
+          >
+            <Icon
+              width="20px"
+              height="20px"
+              viewBox={{ minX: 0, minY: 0, width: 20, height: 20 }}
+              paths={[
+                {
+                  d: "M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM11 15L9 15L9 13L11 13L11 15ZM11 11L9 11L9 5L11 5L11 11Z",
+                  fill: "rgba(102,0,0,1)",
+                  fillRule: "nonzero",
+                },
+              ]}
+              display="block"
+              gap="unset"
+              alignItems="unset"
+              justifyContent="unset"
+              position="absolute"
+              top="8.33%"
+              bottom="8.33%"
+              left="8.33%"
+              right="8.33%"
+              {...getOverrideProps(overrides, "Vector")}
+            ></Icon>
+          </View>
+          <Flex
+            gap="16px"
+            direction="row"
+            width="unset"
+            height="unset"
+            justifyContent="flex-start"
+            alignItems="center"
             grow="1"
             shrink="1"
             basis="0"
-            alignSelf="stretch"
             position="relative"
             padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="Error"
-            {...getOverrideProps(overrides, "ErrorMessage")}
-          ></Text>
+            {...getOverrideProps(overrides, "frame")}
+          >
+            <Flex
+              gap="0"
+              direction="column"
+              width="unset"
+              height="unset"
+              justifyContent="center"
+              alignItems="flex-start"
+              grow="1"
+              shrink="1"
+              basis="0"
+              alignSelf="stretch"
+              position="relative"
+              padding="0px 0px 0px 0px"
+              {...getOverrideProps(overrides, "content")}
+            >
+              <Text
+                fontFamily="Inter"
+                fontSize="16px"
+                fontWeight="700"
+                color="rgba(102,0,0,1)"
+                lineHeight="24px"
+                textAlign="left"
+                display="block"
+                direction="column"
+                justifyContent="unset"
+                width="unset"
+                height="unset"
+                gap="unset"
+                alignItems="unset"
+                shrink="0"
+                position="relative"
+                padding="0px 0px 0px 0px"
+                whiteSpace="pre-wrap"
+                children="Error"
+                {...getOverrideProps(overrides, "heading")}
+              ></Text>
+              <Text
+                fontFamily="Inter"
+                fontSize="16px"
+                fontWeight="400"
+                color="rgba(102,0,0,1)"
+                lineHeight="24px"
+                textAlign="left"
+                display="block"
+                direction="column"
+                justifyContent="unset"
+                width="unset"
+                height="unset"
+                gap="unset"
+                alignItems="unset"
+                shrink="0"
+                alignSelf="stretch"
+                position="relative"
+                padding="0px 0px 0px 0px"
+                whiteSpace="pre-wrap"
+                children="Error Body"
+                {...getOverrideProps(overrides, "ErrorBody")}
+              ></Text>
+            </Flex>
+          </Flex>
         </Flex>
         <Flex
           gap="11px"

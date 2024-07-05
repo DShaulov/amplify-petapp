@@ -7,8 +7,7 @@
 /* eslint-disable */
 import * as React from "react";
 import { getOverrideProps } from "./utils";
-import { Button, Divider, Flex, Text, TextField } from "@aws-amplify/ui-react";
-import LogoWithText from "./LogoWithText";
+import { Divider, Flex, Icon, Text, View } from "@aws-amplify/ui-react";
 export default function MarketingFooter(props) {
   const { overrides, ...rest } = props;
   return (
@@ -25,109 +24,6 @@ export default function MarketingFooter(props) {
       {...getOverrideProps(overrides, "MarketingFooter")}
       {...rest}
     >
-      <Flex
-        gap="16px"
-        direction="row"
-        width="unset"
-        height="unset"
-        justifyContent="space-between"
-        alignItems="flex-start"
-        shrink="0"
-        alignSelf="stretch"
-        position="relative"
-        padding="0px 0px 0px 0px"
-        {...getOverrideProps(overrides, "Frame 313")}
-      >
-        <Flex
-          gap="10px"
-          direction="column"
-          width="unset"
-          height="unset"
-          justifyContent="flex-start"
-          alignItems="flex-start"
-          shrink="0"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          {...getOverrideProps(overrides, "Frame 434")}
-        >
-          <Text
-            fontFamily="Inter"
-            fontSize="20px"
-            fontWeight="600"
-            color="rgba(48,64,80,1)"
-            lineHeight="30px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            width="471px"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            shrink="0"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="Sign up for our newsletter"
-            {...getOverrideProps(overrides, "Sign up for our newsletter")}
-          ></Text>
-          <Text
-            fontFamily="Inter"
-            fontSize="16px"
-            fontWeight="400"
-            color="rgba(48,64,80,1)"
-            lineHeight="24px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            width="471px"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            shrink="0"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="No spam. We promise."
-            {...getOverrideProps(overrides, "No spam. We promise.")}
-          ></Text>
-        </Flex>
-        <Flex
-          gap="10px"
-          direction="row"
-          width="unset"
-          height="unset"
-          justifyContent="flex-start"
-          alignItems="flex-start"
-          shrink="0"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          {...getOverrideProps(overrides, "Frame 435")}
-        >
-          <TextField
-            width="300px"
-            height="unset"
-            placeholder="Your email"
-            shrink="0"
-            size="default"
-            isDisabled={false}
-            labelHidden={true}
-            variation="default"
-            {...getOverrideProps(overrides, "TextField")}
-          ></TextField>
-          <Button
-            width="unset"
-            height="unset"
-            shrink="0"
-            size="default"
-            isDisabled={false}
-            variation="default"
-            children="Subscribe"
-            {...getOverrideProps(overrides, "Button")}
-          ></Button>
-        </Flex>
-      </Flex>
       <Divider
         width="unset"
         height="1px"
@@ -135,377 +31,7 @@ export default function MarketingFooter(props) {
         alignSelf="stretch"
         size="small"
         orientation="horizontal"
-        {...getOverrideProps(overrides, "Divider39413816")}
-      ></Divider>
-      <Flex
-        gap="24px"
-        direction="row"
-        width="unset"
-        height="unset"
-        justifyContent="flex-start"
-        alignItems="flex-start"
-        shrink="0"
-        alignSelf="stretch"
-        position="relative"
-        padding="0px 0px 0px 0px"
-        {...getOverrideProps(overrides, "Frame 40529766988")}
-      >
-        <Flex
-          gap="8px"
-          direction="column"
-          width="unset"
-          height="unset"
-          justifyContent="flex-start"
-          alignItems="flex-start"
-          shrink="0"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          {...getOverrideProps(overrides, "Frame 403")}
-        >
-          <Text
-            fontFamily="Inter"
-            fontSize="16px"
-            fontWeight="600"
-            color="rgba(48,64,80,1)"
-            lineHeight="24px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            letterSpacing="0.01px"
-            width="272px"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            shrink="0"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="Products"
-            {...getOverrideProps(overrides, "Products")}
-          ></Text>
-          <Text
-            fontFamily="Inter"
-            fontSize="16px"
-            fontWeight="400"
-            color="rgba(48,64,80,1)"
-            lineHeight="24px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            letterSpacing="0.01px"
-            width="272px"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            shrink="0"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="Libraries"
-            {...getOverrideProps(overrides, "Libraries")}
-          ></Text>
-          <Text
-            fontFamily="Inter"
-            fontSize="16px"
-            fontWeight="400"
-            color="rgba(48,64,80,1)"
-            lineHeight="24px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            letterSpacing="0.01px"
-            width="272px"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            shrink="0"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="CLI"
-            {...getOverrideProps(overrides, "CLI")}
-          ></Text>
-          <Text
-            fontFamily="Inter"
-            fontSize="16px"
-            fontWeight="400"
-            color="rgba(48,64,80,1)"
-            lineHeight="24px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            letterSpacing="0.01px"
-            width="272px"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            shrink="0"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="Studio"
-            {...getOverrideProps(overrides, "Studio")}
-          ></Text>
-          <Text
-            fontFamily="Inter"
-            fontSize="16px"
-            fontWeight="400"
-            color="rgba(48,64,80,1)"
-            lineHeight="24px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            letterSpacing="0.01px"
-            width="272px"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            shrink="0"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="Hosting"
-            {...getOverrideProps(overrides, "Hosting")}
-          ></Text>
-        </Flex>
-        <Flex
-          gap="8px"
-          direction="column"
-          width="unset"
-          height="unset"
-          justifyContent="flex-start"
-          alignItems="flex-start"
-          shrink="0"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          {...getOverrideProps(overrides, "Frame 404")}
-        >
-          <Text
-            fontFamily="Inter"
-            fontSize="16px"
-            fontWeight="600"
-            color="rgba(48,64,80,1)"
-            lineHeight="24px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            letterSpacing="0.01px"
-            width="272px"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            shrink="0"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="Resources"
-            {...getOverrideProps(overrides, "Resources")}
-          ></Text>
-          <Text
-            fontFamily="Inter"
-            fontSize="16px"
-            fontWeight="400"
-            color="rgba(48,64,80,1)"
-            lineHeight="24px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            letterSpacing="0.01px"
-            width="272px"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            shrink="0"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="Docs"
-            {...getOverrideProps(overrides, "Docs")}
-          ></Text>
-          <Text
-            fontFamily="Inter"
-            fontSize="16px"
-            fontWeight="400"
-            color="rgba(48,64,80,1)"
-            lineHeight="24px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            letterSpacing="0.01px"
-            width="272px"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            shrink="0"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="Learn"
-            {...getOverrideProps(overrides, "Learn")}
-          ></Text>
-          <Text
-            fontFamily="Inter"
-            fontSize="16px"
-            fontWeight="400"
-            color="rgba(48,64,80,1)"
-            lineHeight="24px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            letterSpacing="0.01px"
-            width="272px"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            shrink="0"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="Examples"
-            {...getOverrideProps(overrides, "Examples")}
-          ></Text>
-          <Text
-            fontFamily="Inter"
-            fontSize="16px"
-            fontWeight="400"
-            color="rgba(48,64,80,1)"
-            lineHeight="24px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            letterSpacing="0.01px"
-            width="272px"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            shrink="0"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="Changelog"
-            {...getOverrideProps(overrides, "Changelog")}
-          ></Text>
-        </Flex>
-        <Flex
-          gap="8px"
-          direction="column"
-          width="unset"
-          height="unset"
-          justifyContent="flex-start"
-          alignItems="flex-start"
-          shrink="0"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          {...getOverrideProps(overrides, "Frame 40539413972")}
-        >
-          <Text
-            fontFamily="Inter"
-            fontSize="16px"
-            fontWeight="600"
-            color="rgba(48,64,80,1)"
-            lineHeight="24px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            letterSpacing="0.01px"
-            width="272px"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            shrink="0"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="Company"
-            {...getOverrideProps(overrides, "Company")}
-          ></Text>
-          <Text
-            fontFamily="Inter"
-            fontSize="16px"
-            fontWeight="400"
-            color="rgba(48,64,80,1)"
-            lineHeight="24px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            letterSpacing="0.01px"
-            width="272px"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            shrink="0"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="About us"
-            {...getOverrideProps(overrides, "About us")}
-          ></Text>
-          <Text
-            fontFamily="Inter"
-            fontSize="16px"
-            fontWeight="400"
-            color="rgba(48,64,80,1)"
-            lineHeight="24px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            letterSpacing="0.01px"
-            width="272px"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            shrink="0"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="Contact"
-            {...getOverrideProps(overrides, "Contact")}
-          ></Text>
-          <Text
-            fontFamily="Inter"
-            fontSize="16px"
-            fontWeight="400"
-            color="rgba(48,64,80,1)"
-            lineHeight="24px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            letterSpacing="0.01px"
-            width="272px"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            shrink="0"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="Blog"
-            {...getOverrideProps(overrides, "Blog")}
-          ></Text>
-        </Flex>
-      </Flex>
-      <Divider
-        width="unset"
-        height="1px"
-        shrink="0"
-        alignSelf="stretch"
-        size="small"
-        orientation="horizontal"
-        {...getOverrideProps(overrides, "Divider39413869")}
+        {...getOverrideProps(overrides, "Divider")}
       ></Divider>
       <Flex
         gap="0"
@@ -520,19 +46,349 @@ export default function MarketingFooter(props) {
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "Frame 433")}
       >
-        <LogoWithText
-          width="127.88px"
-          height="18.91px"
-          display="block"
-          gap="unset"
-          alignItems="unset"
-          justifyContent="unset"
+        <Flex
+          gap="50px"
+          direction="row"
+          width="308px"
+          height="56px"
+          justifyContent="flex-start"
+          alignItems="center"
           shrink="0"
           position="relative"
           padding="0px 0px 0px 0px"
-          color="neutral"
-          {...getOverrideProps(overrides, "LogoWithText")}
-        ></LogoWithText>
+          {...getOverrideProps(overrides, "Frame 321")}
+        >
+          <Flex
+            gap="16px"
+            direction="row"
+            width="308px"
+            height="83px"
+            justifyContent="center"
+            alignItems="center"
+            overflow="hidden"
+            shrink="0"
+            position="relative"
+            padding="0px 0px 0px 0px"
+            {...getOverrideProps(overrides, "Frame 438")}
+          >
+            <View
+              width="58px"
+              height="50px"
+              display="block"
+              gap="unset"
+              alignItems="unset"
+              justifyContent="unset"
+              overflow="hidden"
+              shrink="0"
+              position="relative"
+              padding="0px 0px 0px 0px"
+              {...getOverrideProps(overrides, "Simplification")}
+            >
+              <Icon
+                width="43.46px"
+                height="30.17px"
+                viewBox={{
+                  minX: 0,
+                  minY: 0,
+                  width: 43.460357666015625,
+                  height: 30.172439575195312,
+                }}
+                paths={[
+                  {
+                    d: "M21.1949 0.000109224C21.2382 7.31805e-05 21.2814 3.71362e-05 21.326 0C23.9874 0.00350689 26.564 0.663665 28.5061 2.37182C28.6899 2.54252 28.856 2.71802 29.0155 2.90747C29.1799 3.10261 29.3513 3.29227 29.5228 3.48235C29.5898 3.55684 29.6568 3.63133 29.7238 3.70583C29.9163 3.91968 30.1094 4.1331 30.3027 4.34644C30.5726 4.64512 30.8412 4.94473 31.1101 5.2442C31.2712 5.42373 31.4325 5.60321 31.5937 5.78269C31.6577 5.85392 31.7217 5.92514 31.7857 5.99637C31.8332 6.04925 31.8332 6.04925 31.8817 6.10321C32.9374 7.27842 32.9374 7.27842 33.0335 7.38532C33.0973 7.45633 33.1611 7.52734 33.2248 7.59835C33.3878 7.77971 33.5507 7.96109 33.7136 8.14251C33.9908 8.45136 34.2682 8.76018 34.5469 9.06795C34.8593 9.4129 35.17 9.75915 35.4807 10.1053C35.6419 10.2848 35.8032 10.4643 35.9644 10.6438C36.0284 10.715 36.0924 10.7863 36.1564 10.8575C36.2039 10.9104 36.2039 10.9104 36.2523 10.9643C37.3081 12.1395 37.3081 12.1395 37.4041 12.2464C37.4679 12.3174 37.5317 12.3884 37.5955 12.4595C37.7585 12.6408 37.9214 12.8222 38.0842 13.0036C38.3615 13.3125 38.6388 13.6213 38.9176 13.9291C39.0062 14.027 39.0948 14.1249 39.1834 14.2229C39.211 14.2534 39.2387 14.2839 39.2672 14.3153C40.0411 15.1694 40.7862 16.0309 41.4666 16.9484C41.5639 17.078 41.6654 17.2046 41.7674 17.3312C43.153 19.1197 43.7328 21.1661 43.3399 23.3341C43.0097 24.9765 42.2129 26.4163 40.9188 27.6086C40.8435 27.6785 40.77 27.7499 40.6966 27.8215C39.4091 29.0491 37.7002 29.7869 35.8758 30.0882C35.8233 30.0976 35.7707 30.1069 35.7166 30.1165C35.4802 30.147 35.2495 30.1523 35.0111 30.1544C34.962 30.1549 34.9129 30.1554 34.8624 30.156C33.7402 30.1655 32.6663 30.1384 31.5642 29.928C31.5001 29.9165 31.436 29.905 31.37 29.8932C30.2576 29.693 29.1726 29.4145 28.0824 29.1338C25.212 28.3963 22.4516 27.9036 19.4637 28.2753C19.3938 28.2838 19.3239 28.2923 19.2519 28.301C18.2942 28.4176 17.3614 28.5544 16.4327 28.8005C15.9914 28.9165 15.5477 29.025 15.1044 29.1347C14.9913 29.1627 14.8782 29.1907 14.7651 29.2188C11.5829 30.0089 8.03862 30.812 4.92674 29.3938C4.87436 29.371 4.82197 29.3482 4.76801 29.3247C2.62856 28.3428 1.13867 26.4665 0.40587 24.4471C-0.298485 22.4194 -0.0730016 20.435 0.980582 18.5631C1.23992 18.1207 1.57929 17.7481 1.93794 17.3691C2.08494 17.2118 2.22498 17.0497 2.36487 16.8871C2.41809 16.8256 2.47131 16.7642 2.52453 16.7027C2.57714 16.6417 2.62975 16.5808 2.68234 16.5199C3.02405 16.1239 3.36833 15.7303 3.71964 15.3413C3.95023 15.0859 4.17774 14.8289 4.39886 14.5667C4.63868 14.2825 4.88395 14.0026 5.1315 13.7238C5.33165 13.4983 5.53041 13.2718 5.72778 13.0443C5.75443 13.0136 5.78109 12.9829 5.80855 12.9512C5.94154 12.7979 6.07432 12.6443 6.20698 12.4907C6.52843 12.119 6.85488 11.7514 7.18495 11.3859C7.43066 11.113 7.66797 10.8352 7.90389 10.5553C8.07847 10.3501 8.25974 10.1498 8.441 9.94936C8.67288 9.69286 8.9018 9.43494 9.12391 9.17145C9.36373 8.88717 9.609 8.60733 9.85655 8.32854C10.0567 8.10301 10.2555 7.87655 10.4528 7.64901C10.4795 7.6183 10.5061 7.58758 10.5336 7.55593C10.6666 7.40256 10.7994 7.24904 10.932 7.09542C11.2214 6.76075 11.5141 6.42893 11.8113 6.09987C12.0419 5.84445 12.2694 5.58749 12.4905 5.3253C12.7634 5.00185 13.0432 4.68384 13.3252 4.36689C13.4231 4.2569 13.5199 4.14644 13.6159 4.03511C13.8928 3.71459 14.1915 3.41695 14.4987 3.12031C14.6473 2.97654 14.7911 2.82935 14.9342 2.68107C16.5528 1.06321 18.7661 0.00192517 21.1949 0.000109224Z",
+                    fill: "rgba(191,64,64,1)",
+                    fillRule: "nonzero",
+                  },
+                ]}
+                display="block"
+                gap="unset"
+                alignItems="unset"
+                justifyContent="unset"
+                position="absolute"
+                top="39.72%"
+                bottom="-0.06%"
+                left="14.83%"
+                right="10.24%"
+                {...getOverrideProps(overrides, "Vector401825494")}
+              ></Icon>
+              <Icon
+                width="14.86px"
+                height="18.2px"
+                viewBox={{
+                  minX: 0,
+                  minY: 0,
+                  width: 14.858586311340332,
+                  height: 18.198211669921875,
+                }}
+                paths={[
+                  {
+                    d: "M7.926 0.248423C7.99475 0.271078 8.06351 0.293733 8.13434 0.317075C9.60603 0.845082 10.8649 1.90995 11.8242 3.0262C11.8614 3.06934 11.8614 3.06934 11.8994 3.11335C13.6679 5.17908 14.8672 7.76127 14.8585 10.3947C14.8585 10.4353 14.8584 10.4759 14.8583 10.5178C14.8512 12.0222 14.4834 13.4634 13.6551 14.7783C13.6356 14.8095 13.6161 14.8406 13.5961 14.8727C13.338 15.2799 13.0479 15.6512 12.7101 16.007C12.6448 16.0777 12.6448 16.0777 12.5781 16.1499C11.5003 17.2761 9.89599 18.0744 8.24162 18.1923C6.36423 18.2574 4.6076 17.784 3.19726 16.6346C3.04607 16.5057 2.89835 16.3743 2.75152 16.2413C2.67296 16.1704 2.59368 16.1 2.51181 16.0322C0.939841 14.7128 0.125742 12.4206 0.0170806 10.5386C0.0152533 10.4746 0.013426 10.4106 0.0115434 10.3446C0.00925932 10.2784 0.00925932 10.2784 0.00692909 10.211C-0.067246 7.78999 0.450687 5.271 1.72567 3.12367C1.78192 3.02875 1.83658 2.93306 1.89118 2.83736C2.20193 2.31474 2.59353 1.86947 3.02376 1.42364C3.06876 1.37674 3.11376 1.32985 3.16012 1.28153C4.37704 0.101844 6.25038 -0.315278 7.926 0.248423Z",
+                    fill: "rgba(191,64,64,1)",
+                    fillRule: "nonzero",
+                  },
+                ]}
+                display="block"
+                gap="unset"
+                alignItems="unset"
+                justifyContent="unset"
+                position="absolute"
+                top="-0.07%"
+                bottom="63.67%"
+                left="22.89%"
+                right="51.49%"
+                {...getOverrideProps(overrides, "Vector401825495")}
+              ></Icon>
+              <Icon
+                width="14.07px"
+                height="17.06px"
+                viewBox={{
+                  minX: 0,
+                  minY: 0,
+                  width: 14.069010734558105,
+                  height: 17.055767059326172,
+                }}
+                paths={[
+                  {
+                    d: "M10.277 0.64183C12.4501 2.04137 13.4611 4.54404 13.893 6.83695C14.3328 9.33689 13.9944 11.9554 12.3516 14.0666C12.0639 14.4246 11.7385 14.7467 11.3992 15.0649C11.357 15.1065 11.3147 15.1481 11.2712 15.1909C10.0697 16.3408 8.42637 16.9466 6.70026 17.0545C5.20143 17.0828 3.80576 16.6208 2.6579 15.7594C2.58264 15.7044 2.58264 15.7044 2.50586 15.6483C1.83471 15.1338 1.34484 14.486 0.945069 13.7829C0.917674 13.7353 0.917674 13.7353 0.889726 13.6867C-0.295872 11.6004 -0.187268 9.18159 0.575982 6.99468C0.808694 6.35204 1.08853 5.73595 1.41757 5.12901C1.44056 5.08641 1.46354 5.04381 1.48722 4.99992C2.14161 3.80046 2.99342 2.72757 4.01635 1.76362C4.04782 1.7338 4.07929 1.70397 4.11171 1.67325C4.35267 1.44933 4.60614 1.25474 4.88384 1.06918C4.92514 1.04153 4.96643 1.01388 5.00898 0.985387C6.63813 -0.091323 8.53948 -0.401395 10.277 0.64183Z",
+                    fill: "rgba(191,64,64,1)",
+                    fillRule: "nonzero",
+                  },
+                ]}
+                display="block"
+                gap="unset"
+                alignItems="unset"
+                justifyContent="unset"
+                position="absolute"
+                top="2.03%"
+                bottom="63.86%"
+                left="56.42%"
+                right="19.33%"
+                {...getOverrideProps(overrides, "Vector401825496")}
+              ></Icon>
+              <Icon
+                width="13.39px"
+                height="15.74px"
+                viewBox={{
+                  minX: 0,
+                  minY: 0,
+                  width: 13.391003608703613,
+                  height: 15.744046211242676,
+                }}
+                paths={[
+                  {
+                    d: "M8.79166 1.47501C8.98535 1.61938 9.17352 1.76899 9.36037 1.92051C9.39376 1.94741 9.42715 1.97431 9.46154 2.00202C9.84568 2.3127 10.2165 2.62615 10.5416 2.98889C10.5948 3.04635 10.6479 3.1038 10.7011 3.16125C12.5234 5.15226 13.5736 7.53263 13.3647 10.1355C13.2533 11.1439 12.9242 12.0975 12.3726 12.9782C12.3405 13.0301 12.3085 13.0819 12.2755 13.1353C11.472 14.35 10.2257 15.2351 8.71068 15.5957C7.15801 15.947 5.52142 15.6539 4.15582 14.9333C2.2275 13.8685 0.966818 12.1033 0.41763 10.1447C-0.284097 7.51049 -0.189618 4.2863 1.3831 1.90445C2.00097 1.01157 2.83518 0.316595 3.99209 0.064209C5.74265 -0.22512 7.45029 0.501689 8.79166 1.47501Z",
+                    fill: "rgba(191,64,64,1)",
+                    fillRule: "nonzero",
+                  },
+                ]}
+                display="block"
+                gap="unset"
+                alignItems="unset"
+                justifyContent="unset"
+                position="absolute"
+                top="29.06%"
+                bottom="39.45%"
+                left="-0.05%"
+                right="76.96%"
+                {...getOverrideProps(overrides, "Vector401825497")}
+              ></Icon>
+              <Icon
+                width="11.78px"
+                height="13.47px"
+                viewBox={{
+                  minX: 0,
+                  minY: 0,
+                  width: 11.775761604309082,
+                  height: 13.468123435974121,
+                }}
+                paths={[
+                  {
+                    d: "M9.48135 0.516121C10.9357 1.54129 11.4448 3.16271 11.686 4.74481C11.9803 6.89324 11.5772 9.29529 10.0828 11.0421C9.88468 11.2637 9.6764 11.4762 9.46312 11.6859C9.4262 11.7231 9.38927 11.7602 9.35123 11.7985C8.38346 12.7271 6.87747 13.4068 5.46736 13.4656C3.95339 13.5041 2.69365 13.105 1.5745 12.1633C0.379978 11.0327 -0.0203907 9.51294 0.00079254 7.98912C0.0345489 6.85406 0.417604 5.77692 1.0177 4.78477C1.07371 4.69205 1.12793 4.59843 1.18206 4.50479C1.6635 3.70077 2.28765 2.96493 2.99507 2.31308C3.0883 2.22705 3.1802 2.13994 3.27211 2.05275C4.79392 0.624787 7.37685 -0.788818 9.48135 0.516121Z",
+                    fill: "rgba(191,64,64,1)",
+                    fillRule: "nonzero",
+                  },
+                ]}
+                display="block"
+                gap="unset"
+                alignItems="unset"
+                justifyContent="unset"
+                position="absolute"
+                top="33.57%"
+                bottom="39.49%"
+                left="79.71%"
+                right="-0.02%"
+                {...getOverrideProps(overrides, "Vector401825498")}
+              ></Icon>
+              <Icon
+                width="1.54px"
+                height="1.34px"
+                viewBox={{
+                  minX: 0,
+                  minY: 0,
+                  width: 1.5356415510177612,
+                  height: 1.335470199584961,
+                }}
+                paths={[
+                  {
+                    d: "M1.41752 0C1.4565 0.0176282 1.49548 0.0352564 1.53564 0.0534188C1.06786 0.476496 0.600081 0.899573 0.118126 1.33547C0.0791446 1.31784 0.0401629 1.30021 0 1.28205C0.449368 0.828787 0.913327 0.403452 1.41752 0Z",
+                    fill: "rgba(103,103,103,1)",
+                    fillRule: "nonzero",
+                  },
+                ]}
+                display="block"
+                gap="unset"
+                alignItems="unset"
+                justifyContent="unset"
+                position="absolute"
+                top="43.27%"
+                bottom="54.06%"
+                left="39.92%"
+                right="57.43%"
+                {...getOverrideProps(overrides, "Vector401825499")}
+              ></Icon>
+              <Icon
+                width="1.48px"
+                height="1.28px"
+                viewBox={{
+                  minX: 0,
+                  minY: 0,
+                  width: 1.4765784740447998,
+                  height: 1.2820512056350708,
+                }}
+                paths={[
+                  {
+                    d: "M1.35845 0C1.39743 0.0176282 1.43642 0.0352564 1.47658 0.0534188C1.02829 0.458867 0.58 0.864316 0.118126 1.28205C0.0791446 1.26442 0.0401629 1.24679 0 1.22863C0.427079 0.792296 0.854351 0.364742 1.35845 0Z",
+                    fill: "rgba(94,94,94,1)",
+                    fillRule: "nonzero",
+                  },
+                ]}
+                display="block"
+                gap="unset"
+                alignItems="unset"
+                justifyContent="unset"
+                position="absolute"
+                top="4.27%"
+                bottom="93.16%"
+                left="62.32%"
+                right="35.13%"
+                {...getOverrideProps(overrides, "Vector401825500")}
+              ></Icon>
+              <Icon
+                width="1.24px"
+                height="1.07px"
+                viewBox={{
+                  minX: 0,
+                  minY: 0,
+                  width: 1.240325927734375,
+                  height: 1.068376064300537,
+                }}
+                paths={[
+                  {
+                    d: "M1.1222 0C1.16118 0.0176282 1.20016 0.0352564 1.24033 0.0534188C0.87 0.388355 0.499674 0.723291 0.118126 1.06838C0.0791446 1.05075 0.0401629 1.03312 0 1.01496C0.355354 0.65516 0.707259 0.305391 1.1222 0Z",
+                    fill: "rgba(97,97,97,1)",
+                    fillRule: "nonzero",
+                  },
+                ]}
+                display="block"
+                gap="unset"
+                alignItems="unset"
+                justifyContent="unset"
+                position="absolute"
+                top="1.5%"
+                bottom="96.37%"
+                left="27.49%"
+                right="70.37%"
+                {...getOverrideProps(overrides, "Vector401825501")}
+              ></Icon>
+              <Icon
+                width="1.06px"
+                height="0.91px"
+                viewBox={{
+                  minX: 0,
+                  minY: 0,
+                  width: 1.063136339187622,
+                  height: 0.9081196784973145,
+                }}
+                paths={[
+                  {
+                    d: "M0.94501 0C0.983992 0.0176282 1.02297 0.0352564 1.06314 0.0534188C0.751283 0.33547 0.43943 0.617521 0.118126 0.90812C0.0791446 0.890491 0.0401629 0.872863 0 0.854701C0.297277 0.546204 0.59284 0.257523 0.94501 0Z",
+                    fill: "rgba(98,98,98,1)",
+                    fillRule: "nonzero",
+                  },
+                ]}
+                display="block"
+                gap="unset"
+                alignItems="unset"
+                justifyContent="unset"
+                position="absolute"
+                top="30.24%"
+                bottom="67.95%"
+                left="2.95%"
+                right="95.21%"
+                {...getOverrideProps(overrides, "Vector401825502")}
+              ></Icon>
+            </View>
+            <Icon
+              width="156px"
+              height="30px"
+              viewBox={{ minX: 0, minY: 0, width: 156, height: 30 }}
+              paths={[
+                {
+                  d: "M0.558924 22.9032C0.40649 22.9032 0.270994 22.8387 0.152434 22.7097C0.0508113 22.5591 0 22.3871 0 22.1935C0 22.1075 0.0169371 22.0323 0.0508113 21.9677L5.8433 1.32258C5.89411 1.08602 6.0042 0.860215 6.17357 0.645161C6.35988 0.430107 6.60547 0.32258 6.91034 0.32258L11.5596 0.32258C11.8814 0.32258 12.127 0.430107 12.2963 0.645161C12.4657 0.860215 12.5758 1.08602 12.6266 1.32258L18.4445 21.9677C18.4614 22.0323 18.4699 22.1075 18.4699 22.1935C18.4699 22.3871 18.4106 22.5591 18.2921 22.7097C18.1904 22.8387 18.0634 22.9032 17.911 22.9032L13.9985 22.9032C13.7106 22.9032 13.4989 22.8172 13.3634 22.6452C13.2279 22.4731 13.1347 22.3118 13.0839 22.1613L12.2963 19.4516L6.17357 19.4516L5.386 22.1613C5.33519 22.3118 5.24203 22.4731 5.10654 22.6452C4.98798 22.8172 4.77626 22.9032 4.47139 22.9032L0.558924 22.9032ZM7.34223 14L11.1277 14L9.22225 6.74193L7.34223 14Z",
+                  fill: "rgba(191,64,64,1)",
+                  fillRule: "nonzero",
+                },
+                {
+                  d: "M26.409 23.2258C25.6299 23.2258 24.9185 23.0753 24.2749 22.7742C23.6313 22.4731 23.0724 22.0108 22.5981 21.3871C22.1239 20.7634 21.7513 19.9785 21.4803 19.0323C21.2093 18.086 21.0484 16.9785 20.9976 15.7097C20.9806 15.2366 20.9722 14.828 20.9722 14.4839C20.9722 14.1398 20.9806 13.7419 20.9976 13.2903C21.0314 12.086 21.1839 11.0215 21.4549 10.0968C21.7259 9.15054 22.0985 8.36559 22.5727 7.74193C23.047 7.11828 23.6059 6.64516 24.2495 6.32258C24.91 5.97849 25.6299 5.80645 26.409 5.80645C27.1711 5.80645 27.8486 5.96774 28.4414 6.29032C29.0342 6.5914 29.5339 7 29.9404 7.51613L29.9404 0.83871C29.9404 0.60215 29.9996 0.408602 30.1182 0.258065C30.2537 0.0860217 30.4146 0 30.6009 0L34.5134 0C34.6997 0 34.8521 0.0860217 34.9707 0.258065C35.1062 0.408602 35.1739 0.60215 35.1739 0.83871L35.1739 22.0645C35.1739 22.3011 35.1062 22.5054 34.9707 22.6774C34.8521 22.828 34.6997 22.9032 34.5134 22.9032L30.9058 22.9032C30.7364 22.9032 30.584 22.828 30.4485 22.6774C30.313 22.5054 30.2452 22.3011 30.2452 22.0645L30.2452 21.1613C29.8387 21.7849 29.3221 22.2903 28.6955 22.6774C28.0857 23.043 27.3236 23.2258 26.409 23.2258ZM28.1366 18.1935C28.5769 18.1935 28.9241 18.0753 29.1782 17.8387C29.4492 17.6021 29.6355 17.2903 29.7371 16.9032C29.8557 16.5161 29.9234 16.086 29.9404 15.6129C29.9742 15.1398 29.9912 14.7312 29.9912 14.3871C29.9912 14.043 29.9742 13.6452 29.9404 13.1935C29.9234 12.7419 29.8472 12.3441 29.7117 12C29.5931 11.6559 29.4068 11.3763 29.1528 11.1613C28.8987 10.9462 28.56 10.8387 28.1366 10.8387C27.7131 10.8387 27.3744 10.957 27.1203 11.1935C26.8663 11.4086 26.68 11.7204 26.5614 12.129C26.4598 12.5161 26.392 12.9677 26.3582 13.4839C26.3073 14.172 26.3073 14.8602 26.3582 15.5484C26.392 16.0645 26.4598 16.5269 26.5614 16.9355C26.68 17.3226 26.8663 17.6344 27.1203 17.871C27.3744 18.086 27.7131 18.1935 28.1366 18.1935Z",
+                  fill: "rgba(191,64,64,1)",
+                  fillRule: "nonzero",
+                },
+                {
+                  d: "M46.1107 23.2258C44.6202 23.2258 43.3584 22.9462 42.3252 22.3871C41.309 21.828 40.5299 21.0108 39.9879 19.9355C39.4459 18.8387 39.141 17.5269 39.0733 16C39.0563 15.5484 39.0479 15.0538 39.0479 14.5161C39.0479 13.9785 39.0563 13.4839 39.0733 13.0323C39.141 11.4839 39.4628 10.172 40.0387 9.09677C40.6146 8.02151 41.4106 7.2043 42.4268 6.64516C43.46 6.08602 44.6879 5.80645 46.1107 5.80645C47.5334 5.80645 48.7528 6.08602 49.7691 6.64516C50.8022 7.2043 51.6067 8.02151 52.1826 9.09677C52.7585 10.172 53.0803 11.4839 53.148 13.0323C53.1819 13.4839 53.1988 13.9785 53.1988 14.5161C53.1988 15.0538 53.1819 15.5484 53.148 16C53.0803 17.5269 52.7754 18.8387 52.2334 19.9355C51.6914 21.0108 50.9039 21.828 49.8707 22.3871C48.8545 22.9462 47.6011 23.2258 46.1107 23.2258ZM46.1107 18.6774C46.7373 18.6774 47.1692 18.4409 47.4063 17.9677C47.6435 17.4946 47.779 16.7849 47.8128 15.8387C47.8298 15.5161 47.8382 15.0753 47.8382 14.5161C47.8382 13.957 47.8298 13.5161 47.8128 13.1935C47.779 12.2688 47.6435 11.5699 47.4063 11.0968C47.1692 10.6021 46.7373 10.3548 46.1107 10.3548C45.5009 10.3548 45.0775 10.6021 44.8404 11.0968C44.6033 11.5699 44.4593 12.2688 44.4085 13.1935C44.3915 13.5161 44.3831 13.957 44.3831 14.5161C44.3831 15.0753 44.3915 15.5161 44.4085 15.8387C44.4593 16.7849 44.6033 17.4946 44.8404 17.9677C45.0775 18.4409 45.5009 18.6774 46.1107 18.6774Z",
+                  fill: "rgba(191,64,64,1)",
+                  fillRule: "nonzero",
+                },
+                {
+                  d: "M57.695 29.0323C57.5087 29.0323 57.3478 28.9462 57.2123 28.7742C57.0938 28.6237 57.0345 28.4301 57.0345 28.1935L57.0345 6.96774C57.0345 6.73118 57.0938 6.53763 57.2123 6.3871C57.3478 6.21505 57.5087 6.12903 57.695 6.12903L61.2772 6.12903C61.4635 6.12903 61.616 6.21505 61.7345 6.3871C61.87 6.53763 61.9378 6.73118 61.9378 6.96774L61.9378 8.03226C62.3443 7.3871 62.8608 6.86021 63.4875 6.45161C64.1142 6.0215 64.8848 5.80645 65.7994 5.80645C66.5955 5.80645 67.3068 5.95699 67.9335 6.25806C68.5771 6.55914 69.136 7.0215 69.6103 7.64516C70.0845 8.24731 70.4571 9.0215 70.7281 9.96774C70.9991 10.914 71.16 12.0215 71.2108 13.2903C71.2278 13.7419 71.2362 14.1505 71.2362 14.5161C71.2362 14.8817 71.2278 15.3011 71.2108 15.7742C71.177 16.9785 71.0245 18.043 70.7535 18.9677C70.4825 19.8925 70.1099 20.6774 69.6357 21.3226C69.1614 21.9462 68.6025 22.4194 67.9589 22.7419C67.3153 23.0645 66.5955 23.2258 65.7994 23.2258C65.0203 23.2258 64.3344 23.0645 63.7416 22.7419C63.1488 22.3978 62.6576 21.871 62.268 21.1613L62.268 28.1935C62.268 28.4301 62.2003 28.6237 62.0648 28.7742C61.9293 28.9462 61.7769 29.0323 61.6075 29.0323L57.695 29.0323ZM64.0718 18.1935C64.5122 18.1935 64.851 18.086 65.0881 17.871C65.3421 17.6344 65.52 17.3226 65.6216 16.9355C65.7402 16.5269 65.8164 16.0645 65.8502 15.5484C65.9011 14.8602 65.9011 14.172 65.8502 13.4839C65.8164 12.9677 65.7402 12.5161 65.6216 12.129C65.52 11.7204 65.3421 11.4086 65.0881 11.1935C64.851 10.957 64.5122 10.8387 64.0718 10.8387C63.6315 10.8387 63.2758 10.957 63.0048 11.1935C62.7508 11.4301 62.5644 11.7419 62.4459 12.129C62.3443 12.5161 62.285 12.9462 62.268 13.4194C62.2511 13.871 62.2426 14.2796 62.2426 14.6452C62.2426 14.9892 62.2511 15.3871 62.268 15.8387C62.285 16.2903 62.3527 16.6882 62.4713 17.0323C62.6068 17.3763 62.8016 17.6559 63.0556 17.871C63.3097 18.086 63.6484 18.1935 64.0718 18.1935Z",
+                  fill: "rgba(191,64,64,1)",
+                  fillRule: "nonzero",
+                },
+                {
+                  d: "M82.5546 22.9032C81.4029 22.9032 80.3867 22.6882 79.506 22.2581C78.6422 21.828 77.9647 21.129 77.4735 20.1613C76.9993 19.172 76.7622 17.871 76.7622 16.2581L76.7622 11.0645L74.7551 11.0645C74.5688 11.0645 74.4079 10.9892 74.2724 10.8387C74.1539 10.6667 74.0946 10.4624 74.0946 10.2258L74.0946 6.96774C74.0946 6.73118 74.1539 6.53763 74.2724 6.3871C74.4079 6.21505 74.5688 6.12903 74.7551 6.12903L76.7622 6.12903L76.7622 0.83871C76.7622 0.60215 76.8214 0.408602 76.94 0.258065C77.0755 0.0860217 77.2364 0 77.4227 0L81.1065 0C81.2928 0 81.4453 0.0860217 81.5638 0.258065C81.6993 0.408602 81.7671 0.60215 81.7671 0.83871L81.7671 6.12903L84.9682 6.12903C85.1545 6.12903 85.3069 6.21505 85.4255 6.3871C85.561 6.53763 85.6287 6.73118 85.6287 6.96774L85.6287 10.2258C85.6287 10.4624 85.561 10.6667 85.4255 10.8387C85.3069 10.9892 85.1545 11.0645 84.9682 11.0645L81.7671 11.0645L81.7671 15.7097C81.7671 16.3333 81.8687 16.828 82.0719 17.1935C82.2752 17.5376 82.597 17.7097 83.0374 17.7097L85.1714 17.7097C85.3577 17.7097 85.5102 17.7957 85.6287 17.9677C85.7642 18.1183 85.832 18.3118 85.832 18.5484L85.832 22.0645C85.832 22.3011 85.7642 22.5054 85.6287 22.6774C85.5102 22.828 85.3577 22.9032 85.1714 22.9032L82.5546 22.9032Z",
+                  fill: "rgba(191,64,64,1)",
+                  fillRule: "nonzero",
+                },
+                {
+                  d: "M93.5299 23.2258C92.5984 23.2258 91.76 23 91.0147 22.5484C90.2864 22.0968 89.7106 21.4946 89.2871 20.7419C88.8807 19.9677 88.6774 19.1075 88.6774 18.1613C88.6774 16.6129 89.1686 15.3978 90.1509 14.5161C91.1502 13.6129 92.4798 12.9892 94.1396 12.6452L97.0613 12.0645L97.0613 11.8387C97.0613 11.172 96.9766 10.6774 96.8072 10.3548C96.6548 10.0108 96.3245 9.83871 95.8164 9.83871C95.4607 9.83871 95.1728 9.92473 94.9526 10.0968C94.7324 10.2688 94.5292 10.5161 94.3429 10.8387C94.1735 11.0753 93.9533 11.1935 93.6823 11.1935L90.1001 11.1935C89.9138 11.1935 89.7699 11.129 89.6682 11C89.5666 10.871 89.5243 10.6989 89.5412 10.4839C89.5581 10.0968 89.6852 9.64516 89.9223 9.12903C90.1594 8.5914 90.5236 8.07527 91.0147 7.58064C91.5228 7.06452 92.1749 6.64516 92.971 6.32258C93.767 5.97849 94.724 5.80645 95.8418 5.80645C96.9766 5.80645 97.9505 5.96774 98.7635 6.29032C99.5764 6.6129 100.245 7.06452 100.771 7.64516C101.296 8.22581 101.685 8.93548 101.939 9.77419C102.193 10.5914 102.32 11.5054 102.32 12.5161L102.32 22.0645C102.32 22.3011 102.253 22.5054 102.117 22.6774C101.998 22.828 101.846 22.9032 101.66 22.9032L97.9505 22.9032C97.7811 22.9032 97.6287 22.828 97.4932 22.6774C97.3577 22.5054 97.2899 22.3011 97.2899 22.0645L97.2899 21.0323C97.0697 21.4624 96.7733 21.8387 96.4007 22.1613C96.0451 22.4839 95.6216 22.7419 95.1304 22.9355C94.6562 23.129 94.1227 23.2258 93.5299 23.2258ZM95.0034 19C95.4268 19 95.791 18.8925 96.0959 18.6774C96.4177 18.4409 96.6717 18.086 96.858 17.6129C97.0443 17.1398 97.1375 16.5484 97.1375 15.8387L97.1375 15.6129L95.3083 16.0645C94.6816 16.2151 94.2412 16.4409 93.9872 16.7419C93.7331 17.0215 93.6061 17.3333 93.6061 17.6774C93.6061 17.9355 93.6654 18.1613 93.784 18.3548C93.9025 18.5484 94.0634 18.7097 94.2667 18.8387C94.4868 18.9462 94.7324 19 95.0034 19Z",
+                  fill: "rgba(191,64,64,1)",
+                  fillRule: "nonzero",
+                },
+                {
+                  d: "M111.503 23.2258C110.724 23.2258 110.013 23.0753 109.369 22.7742C108.725 22.4731 108.166 22.0108 107.692 21.3871C107.218 20.7634 106.845 19.9785 106.574 19.0323C106.303 18.086 106.142 16.9785 106.092 15.7097C106.075 15.2366 106.066 14.828 106.066 14.4839C106.066 14.1398 106.075 13.7419 106.092 13.2903C106.125 12.086 106.278 11.0215 106.549 10.0968C106.82 9.15054 107.193 8.36559 107.667 7.74193C108.141 7.11828 108.7 6.64516 109.344 6.32258C110.004 5.97849 110.724 5.80645 111.503 5.80645C112.265 5.80645 112.943 5.96774 113.535 6.29032C114.128 6.5914 114.628 7 115.034 7.51613L115.034 0.83871C115.034 0.60215 115.094 0.408602 115.212 0.258065C115.348 0.0860217 115.509 0 115.695 0L119.607 0C119.794 0 119.946 0.0860217 120.065 0.258065C120.2 0.408602 120.268 0.60215 120.268 0.83871L120.268 22.0645C120.268 22.3011 120.2 22.5054 120.065 22.6774C119.946 22.828 119.794 22.9032 119.607 22.9032L116 22.9032C115.83 22.9032 115.678 22.828 115.542 22.6774C115.407 22.5054 115.339 22.3011 115.339 22.0645L115.339 21.1613C114.933 21.7849 114.416 22.2903 113.79 22.6774C113.18 23.043 112.418 23.2258 111.503 23.2258ZM113.231 18.1935C113.671 18.1935 114.018 18.0753 114.272 17.8387C114.543 17.6021 114.73 17.2903 114.831 16.9032C114.95 16.5161 115.017 16.086 115.034 15.6129C115.068 15.1398 115.085 14.7312 115.085 14.3871C115.085 14.043 115.068 13.6452 115.034 13.1935C115.017 12.7419 114.941 12.3441 114.806 12C114.687 11.6559 114.501 11.3763 114.247 11.1613C113.993 10.9462 113.654 10.8387 113.231 10.8387C112.807 10.8387 112.468 10.957 112.214 11.1935C111.96 11.4086 111.774 11.7204 111.655 12.129C111.554 12.5161 111.486 12.9677 111.452 13.4839C111.401 14.172 111.401 14.8602 111.452 15.5484C111.486 16.0645 111.554 16.5269 111.655 16.9355C111.774 17.3226 111.96 17.6344 112.214 17.871C112.468 18.086 112.807 18.1935 113.231 18.1935Z",
+                  fill: "rgba(191,64,64,1)",
+                  fillRule: "nonzero",
+                },
+                {
+                  d: "M131.205 23.2258C129.714 23.2258 128.452 22.9462 127.419 22.3871C126.403 21.828 125.624 21.0108 125.082 19.9355C124.54 18.8387 124.235 17.5269 124.167 16C124.15 15.5484 124.142 15.0538 124.142 14.5161C124.142 13.9785 124.15 13.4839 124.167 13.0323C124.235 11.4839 124.557 10.172 125.133 9.09677C125.709 8.02151 126.505 7.2043 127.521 6.64516C128.554 6.08602 129.782 5.80645 131.205 5.80645C132.627 5.80645 133.847 6.08602 134.863 6.64516C135.896 7.2043 136.701 8.02151 137.277 9.09677C137.852 10.172 138.174 11.4839 138.242 13.0323C138.276 13.4839 138.293 13.9785 138.293 14.5161C138.293 15.0538 138.276 15.5484 138.242 16C138.174 17.5269 137.869 18.8387 137.327 19.9355C136.785 21.0108 135.998 21.828 134.965 22.3871C133.948 22.9462 132.695 23.2258 131.205 23.2258ZM131.205 18.6774C131.831 18.6774 132.263 18.4409 132.5 17.9677C132.737 17.4946 132.873 16.7849 132.907 15.8387C132.924 15.5161 132.932 15.0753 132.932 14.5161C132.932 13.957 132.924 13.5161 132.907 13.1935C132.873 12.2688 132.737 11.5699 132.5 11.0968C132.263 10.6021 131.831 10.3548 131.205 10.3548C130.595 10.3548 130.172 10.6021 129.934 11.0968C129.697 11.5699 129.553 12.2688 129.502 13.1935C129.486 13.5161 129.477 13.957 129.477 14.5161C129.477 15.0753 129.486 15.5161 129.502 15.8387C129.553 16.7849 129.697 17.4946 129.934 17.9677C130.172 18.4409 130.595 18.6774 131.205 18.6774Z",
+                  fill: "rgba(191,64,64,1)",
+                  fillRule: "nonzero",
+                },
+                {
+                  d: "M149.09 30C147.718 30 146.575 29.7742 145.66 29.3226C144.762 28.8925 144.042 28.3548 143.5 27.7097C142.958 27.086 142.569 26.4624 142.332 25.8387C142.112 25.2366 141.993 24.7634 141.976 24.4194C141.959 24.1828 142.018 23.9785 142.154 23.8064C142.289 23.6559 142.45 23.5806 142.637 23.5806L146.727 23.5806C146.896 23.5806 147.032 23.6344 147.133 23.7419C147.252 23.8495 147.345 24.0108 147.413 24.2258C147.498 24.4194 147.591 24.6129 147.692 24.8064C147.811 25 147.972 25.1505 148.175 25.2581C148.378 25.3656 148.641 25.4194 148.963 25.4194C149.352 25.4194 149.666 25.3333 149.903 25.1613C150.157 24.9892 150.343 24.7204 150.462 24.3548C150.597 23.9892 150.665 23.5054 150.665 22.9032L150.665 20.7419C150.258 21.2366 149.759 21.6344 149.166 21.9355C148.59 22.2151 147.904 22.3548 147.108 22.3548C146.278 22.3548 145.533 22.2151 144.872 21.9355C144.229 21.6344 143.678 21.1828 143.221 20.5806C142.781 19.9785 142.425 19.2151 142.154 18.2903C141.9 17.3656 141.756 16.2581 141.722 14.9677C141.705 14.4086 141.705 13.8495 141.722 13.2903C141.756 12.086 141.9 11.0215 142.154 10.0968C142.408 9.15054 142.764 8.36559 143.221 7.74193C143.678 7.11828 144.229 6.64516 144.872 6.32258C145.533 5.97849 146.278 5.80645 147.108 5.80645C147.972 5.80645 148.726 6.0215 149.369 6.45161C150.03 6.86021 150.563 7.39785 150.97 8.06452L150.97 6.96774C150.97 6.73118 151.029 6.53763 151.148 6.3871C151.283 6.21505 151.444 6.12903 151.63 6.12903L155.314 6.12903C155.5 6.12903 155.653 6.21505 155.771 6.3871C155.907 6.53763 155.975 6.73118 155.975 6.96774L156 22.3871C156 24.129 155.704 25.5591 155.111 26.6774C154.535 27.7957 153.73 28.6237 152.697 29.1613C151.664 29.7204 150.462 30 149.09 30ZM148.861 17.4516C149.268 17.4516 149.598 17.3441 149.852 17.129C150.106 16.914 150.292 16.6344 150.411 16.2903C150.546 15.9247 150.631 15.5161 150.665 15.0645C150.682 14.871 150.69 14.5591 150.69 14.129C150.69 13.6989 150.682 13.3978 150.665 13.2258C150.631 12.7742 150.546 12.3763 150.411 12.0323C150.292 11.6667 150.106 11.3763 149.852 11.1613C149.598 10.9462 149.268 10.8387 148.861 10.8387C148.421 10.8387 148.073 10.957 147.819 11.1935C147.565 11.4086 147.379 11.7204 147.26 12.129C147.159 12.5161 147.091 12.9677 147.057 13.4839C147.023 13.9355 147.023 14.3763 147.057 14.8065C147.091 15.3226 147.159 15.7849 147.26 16.1935C147.379 16.5806 147.565 16.8925 147.819 17.129C148.073 17.3441 148.421 17.4516 148.861 17.4516Z",
+                  fill: "rgba(191,64,64,1)",
+                  fillRule: "nonzero",
+                },
+              ]}
+              display="block"
+              gap="unset"
+              alignItems="unset"
+              justifyContent="unset"
+              shrink="0"
+              position="relative"
+              {...getOverrideProps(overrides, "Logo Text")}
+            ></Icon>
+          </Flex>
+        </Flex>
         <Text
           fontFamily="Inter"
           fontSize="16px"
@@ -551,10 +407,10 @@ export default function MarketingFooter(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="© 2023 AWS Amplify UI. All rights reserved."
+          children="© 2024 Adoptadog - Helping Paws Find Happy Homes."
           {...getOverrideProps(
             overrides,
-            "\u00A9 2023 AWS Amplify UI. All rights reserved."
+            "\u00A9 2024 Adoptadog - Helping Paws Find Happy Homes."
           )}
         ></Text>
       </Flex>

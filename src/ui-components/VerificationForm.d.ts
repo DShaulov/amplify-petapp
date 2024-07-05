@@ -6,7 +6,7 @@
 
 import * as React from "react";
 import { MyIconProps } from "./MyIcon";
-import { ButtonProps, FlexProps, TextFieldProps, TextProps } from "@aws-amplify/ui-react";
+import { ButtonProps, FlexProps, IconProps, TextFieldProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -28,8 +28,13 @@ export declare type VerificationFormOverridesProps = {
     "Your code is on the way. To proceed, enter the code you received. It may take a minute to arrive."?: PrimitiveOverrideProps<TextProps>;
     Forms?: PrimitiveOverrideProps<FlexProps>;
     Code?: PrimitiveOverrideProps<TextFieldProps>;
-    "Error Frame"?: PrimitiveOverrideProps<FlexProps>;
-    ErrorMessage?: PrimitiveOverrideProps<TextProps>;
+    ErrorMessage?: PrimitiveOverrideProps<FlexProps>;
+    "\uD83D\uDD12Icon"?: PrimitiveOverrideProps<ViewProps>;
+    Vector?: PrimitiveOverrideProps<IconProps>;
+    frame?: PrimitiveOverrideProps<FlexProps>;
+    content?: PrimitiveOverrideProps<FlexProps>;
+    heading?: PrimitiveOverrideProps<TextProps>;
+    ErrorBody?: PrimitiveOverrideProps<TextProps>;
     "Confirm Resend Frame"?: PrimitiveOverrideProps<FlexProps>;
     ConfirmBtn?: PrimitiveOverrideProps<ButtonProps>;
     ResendBtn?: PrimitiveOverrideProps<ButtonProps>;

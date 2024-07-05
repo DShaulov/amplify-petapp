@@ -6,7 +6,7 @@
 
 import * as React from "react";
 import { Pet } from "../models";
-import { DividerProps, FlexProps, ImageProps, TextProps } from "@aws-amplify/ui-react";
+import { FlexProps, IconProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 import { MyIconProps } from "./MyIcon";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
@@ -28,7 +28,8 @@ export declare type PetDetailsOverridesProps = {
     Frame?: PrimitiveOverrideProps<FlexProps>;
     CloseIcon?: MyIconProps;
     Name?: PrimitiveOverrideProps<TextProps>;
-    Divider?: PrimitiveOverrideProps<DividerProps>;
+    Divider?: PrimitiveOverrideProps<ViewProps>;
+    "Line 1"?: PrimitiveOverrideProps<IconProps>;
     Features?: PrimitiveOverrideProps<FlexProps>;
     "Breed:"?: PrimitiveOverrideProps<TextProps>;
     "Age:"?: PrimitiveOverrideProps<TextProps>;

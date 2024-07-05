@@ -5,8 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { ButtonProps, DividerProps, FlexProps, TextFieldProps, TextProps } from "@aws-amplify/ui-react";
-import { LogoWithTextProps } from "./LogoWithText";
+import { DividerProps, FlexProps, IconProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -20,36 +19,22 @@ export declare type Variant = {
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type MarketingFooterOverridesProps = {
     MarketingFooter?: PrimitiveOverrideProps<FlexProps>;
-    "Frame 313"?: PrimitiveOverrideProps<FlexProps>;
-    "Frame 434"?: PrimitiveOverrideProps<FlexProps>;
-    "Sign up for our newsletter"?: PrimitiveOverrideProps<TextProps>;
-    "No spam. We promise."?: PrimitiveOverrideProps<TextProps>;
-    "Frame 435"?: PrimitiveOverrideProps<FlexProps>;
-    TextField?: PrimitiveOverrideProps<TextFieldProps>;
-    Button?: PrimitiveOverrideProps<ButtonProps>;
-    Divider39413816?: PrimitiveOverrideProps<DividerProps>;
-    "Frame 40529766988"?: PrimitiveOverrideProps<FlexProps>;
-    "Frame 403"?: PrimitiveOverrideProps<FlexProps>;
-    Products?: PrimitiveOverrideProps<TextProps>;
-    Libraries?: PrimitiveOverrideProps<TextProps>;
-    CLI?: PrimitiveOverrideProps<TextProps>;
-    Studio?: PrimitiveOverrideProps<TextProps>;
-    Hosting?: PrimitiveOverrideProps<TextProps>;
-    "Frame 404"?: PrimitiveOverrideProps<FlexProps>;
-    Resources?: PrimitiveOverrideProps<TextProps>;
-    Docs?: PrimitiveOverrideProps<TextProps>;
-    Learn?: PrimitiveOverrideProps<TextProps>;
-    Examples?: PrimitiveOverrideProps<TextProps>;
-    Changelog?: PrimitiveOverrideProps<TextProps>;
-    "Frame 40539413972"?: PrimitiveOverrideProps<FlexProps>;
-    Company?: PrimitiveOverrideProps<TextProps>;
-    "About us"?: PrimitiveOverrideProps<TextProps>;
-    Contact?: PrimitiveOverrideProps<TextProps>;
-    Blog?: PrimitiveOverrideProps<TextProps>;
-    Divider39413869?: PrimitiveOverrideProps<DividerProps>;
+    Divider?: PrimitiveOverrideProps<DividerProps>;
     "Frame 433"?: PrimitiveOverrideProps<FlexProps>;
-    LogoWithText?: LogoWithTextProps;
-    "\u00A9 2023 AWS Amplify UI. All rights reserved."?: PrimitiveOverrideProps<TextProps>;
+    "Frame 321"?: PrimitiveOverrideProps<FlexProps>;
+    "Frame 438"?: PrimitiveOverrideProps<FlexProps>;
+    Simplification?: PrimitiveOverrideProps<ViewProps>;
+    Vector401825494?: PrimitiveOverrideProps<IconProps>;
+    Vector401825495?: PrimitiveOverrideProps<IconProps>;
+    Vector401825496?: PrimitiveOverrideProps<IconProps>;
+    Vector401825497?: PrimitiveOverrideProps<IconProps>;
+    Vector401825498?: PrimitiveOverrideProps<IconProps>;
+    Vector401825499?: PrimitiveOverrideProps<IconProps>;
+    Vector401825500?: PrimitiveOverrideProps<IconProps>;
+    Vector401825501?: PrimitiveOverrideProps<IconProps>;
+    Vector401825502?: PrimitiveOverrideProps<IconProps>;
+    "Logo Text"?: PrimitiveOverrideProps<IconProps>;
+    "\u00A9 2024 Adoptadog - Helping Paws Find Happy Homes."?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type MarketingFooterProps = React.PropsWithChildren<Partial<FlexProps> & {
     overrides?: MarketingFooterOverridesProps | undefined | null;

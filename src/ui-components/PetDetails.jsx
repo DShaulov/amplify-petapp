@@ -7,7 +7,7 @@
 /* eslint-disable */
 import * as React from "react";
 import { getOverrideProps } from "./utils";
-import { Divider, Flex, Image, Text } from "@aws-amplify/ui-react";
+import { Flex, Icon, Image, Text, View } from "@aws-amplify/ui-react";
 import MyIcon from "./MyIcon";
 export default function PetDetails(props) {
   const { pet, overrides, ...rest } = props;
@@ -130,14 +130,42 @@ export default function PetDetails(props) {
               {...getOverrideProps(overrides, "Name")}
             ></Text>
           </Flex>
-          <Divider
-            width="40px"
-            height="1px"
+          <View
+            width="300px"
+            height="3px"
+            display="block"
+            gap="unset"
+            alignItems="unset"
+            justifyContent="unset"
             shrink="0"
-            size="small"
-            orientation="horizontal"
+            position="relative"
+            padding="0px 0px 0px 0px"
+            backgroundColor="rgba(191,64,64,1)"
             {...getOverrideProps(overrides, "Divider")}
-          ></Divider>
+          >
+            <Icon
+              width="300px"
+              height="0px"
+              viewBox={{ minX: 0, minY: 0, width: 300, height: 1 }}
+              paths={[
+                {
+                  d: "M0 0L300 0L300 -3L0 -3L0 0Z",
+                  stroke: "rgba(191,64,64,1)",
+                  fillRule: "nonzero",
+                  strokeWidth: 3,
+                },
+              ]}
+              display="block"
+              gap="unset"
+              alignItems="unset"
+              justifyContent="unset"
+              position="absolute"
+              top="calc(50% - 0px - -0.5px)"
+              left="0%"
+              right="0%"
+              {...getOverrideProps(overrides, "Line 1")}
+            ></Icon>
+          </View>
           <Flex
             gap="8px"
             direction="column"

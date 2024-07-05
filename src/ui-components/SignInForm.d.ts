@@ -6,7 +6,7 @@
 
 import * as React from "react";
 import { MyIconProps } from "./MyIcon";
-import { ButtonProps, FlexProps, TextFieldProps, TextProps } from "@aws-amplify/ui-react";
+import { ButtonProps, FlexProps, IconProps, TextFieldProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -27,8 +27,13 @@ export declare type SignInFormOverridesProps = {
     Forms?: PrimitiveOverrideProps<FlexProps>;
     Username?: PrimitiveOverrideProps<TextFieldProps>;
     Password?: PrimitiveOverrideProps<TextFieldProps>;
-    "Error Frame"?: PrimitiveOverrideProps<FlexProps>;
-    ErrorMessage?: PrimitiveOverrideProps<TextProps>;
+    ErrorMessage?: PrimitiveOverrideProps<FlexProps>;
+    "\uD83D\uDD12Icon"?: PrimitiveOverrideProps<ViewProps>;
+    Vector?: PrimitiveOverrideProps<IconProps>;
+    frame?: PrimitiveOverrideProps<FlexProps>;
+    content?: PrimitiveOverrideProps<FlexProps>;
+    heading?: PrimitiveOverrideProps<TextProps>;
+    ErrorBody?: PrimitiveOverrideProps<TextProps>;
     "Sign In Button Frame"?: PrimitiveOverrideProps<FlexProps>;
     SignInButton?: PrimitiveOverrideProps<ButtonProps>;
     "Register Frame"?: PrimitiveOverrideProps<FlexProps>;

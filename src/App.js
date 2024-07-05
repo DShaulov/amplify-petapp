@@ -2,7 +2,9 @@ import './global.css';
 import './App.css';
 import {
   Pets, MarketingFooter, NavBarHeader, RegisterDogForm, PetDetails,
-  SignInForm
+  SignInForm,
+  BannerHolder,
+  PetsAvailableTitle
  } from './ui-components';
 import { useState, useEffect } from 'react';
 import ForegroundOverlay from './ForegroundOverlay';
@@ -58,7 +60,8 @@ function App() {
     },
     "RegisterDog": {
       style: {
-        cursor: "pointer"
+        cursor: "pointer",
+        
       },
       onClick: () => {
         setShowForm(!showForm);
@@ -68,7 +71,7 @@ function App() {
     "SignButton": {
       onClick: signedIn ? handleSignOut : handleSignIn,
       children: signedIn ? 'Sign Out' : 'Sign In'
-    }
+    },
   };
   const petsOverrideItems = ({item, index}) => ({
     overrides: {
@@ -87,7 +90,13 @@ function App() {
         setShowDetails(false)
       },
       style: {
-        cursor: "pointer"
+        cursor: "pointer",
+      },
+      "Divider": {
+        width: '600px',
+        style: {
+          color: '#BF4040'
+        }
       }
     }
   };
@@ -103,11 +112,59 @@ function App() {
     showForm,
     setShowForm
   }
+
+  const bannerHolderOverrides = {
+    BannerHolder: {
+      width: "100%",
+      height: "auto",
+      gap: "0",
+      overflow: "hidden",
+      maxWidth: "100%",
+    },
+    "Banner 1": {
+      width: "75%",
+      height: "auto",
+      maxWidth: "75%",
+      objectFit: "cover",
+    }
+  };
+
+  const petsTitleOverrides = {
+    "PetsAvailableTitle": {
+      width: "100%",
+      height: "auto",
+      padding: "12px 20px",
+      maxWidth: "1200px",
+      margin: "50px auto 0",
+      marginBottom: '20px'
+    },
+    "AvailableDog": {
+      width: "100%",
+      height: "auto",
+      maxWidth: "100%",
+      fontSize: "clamp(20px, 4vw, 48px)", // Decreased font size range
+      lineHeight: "1.2",
+      letterSpacing: "0.05em",
+      textAlign: "center",
+      padding: "0px 10px",
+    }
+  };
+
+  const petsOverrides = {
+    Pets: {
+      style: { marginTop: "20px" },
+      templateColumns: 'var(--pet-grid-columns)'
+    },
+  };
+
+  
   return (
     <div className="App">
       <NavBarHeader width={"100%"} overrides={ navbarOverrides }/>
+      <BannerHolder overrides={bannerHolderOverrides}/>
+      <PetsAvailableTitle overrides={petsTitleOverrides}/>
       <header className="App-header">
-        <Pets overrideItems={petsOverrideItems}/>
+        <Pets overrideItems={petsOverrideItems} overrides={petsOverrides}/>
       </header>
       <MarketingFooter width={"100%"}/>
       <ForegroundOverlay isVisible={showDetails} onClose={() => setShowDetails(false)}>

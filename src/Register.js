@@ -14,13 +14,13 @@ function Register({authProps}) {
 
     const validatePassword = (password) => {
         if (password.length < 8) {
-            return "* Password must be at least 8 characters long.";
+            return "Password must be at least 8 characters long.";
         }
         if (!/[A-Z]/.test(password)) {
-            return "* Password must contain at least one uppercase letter.";
+            return "Password must contain at least one uppercase letter.";
         }
         if (!/[a-z]/.test(password)) {
-            return "* Password must contain at least one lowercase letter.";
+            return "Password must contain at least one lowercase letter.";
         }
         return null;
     };
@@ -38,18 +38,21 @@ function Register({authProps}) {
         const email = emailRef.current.value;
 
         if (!validateEmail(email)) {
-            setErrorMessage("* Please enter a valid email address.");
+            setErrorMessage("Please enter a valid email address.");
+            setIsLoading(false);
             return;
         }
 
         const passwordError = validatePassword(password);
         if (passwordError) {
             setErrorMessage(passwordError);
+            setIsLoading(false);
             return;
         }
 
         if (password !== confirmPassword) {
-            setErrorMessage("* Passwords do not match.");
+            setErrorMessage("Passwords do not match.");
+            setIsLoading(false);
             return;
         }
         setErrorMessage('');
@@ -115,10 +118,11 @@ function Register({authProps}) {
         "ConfirmPassword": {ref: confirmPasswordRef, type: "password"},
         "Email": {ref: emailRef},
         "ErrorMessage": {
-            children: errorMessage,
-            color: errorMessage ? "rgba(255,0,0,1)" : "rgba(255,255,255,1)",
-            fontWeight: 200
-        }
+            display: errorMessage ? 'flex' : 'none'
+        },
+        'ErrorBody': {
+            children: errorMessage
+        },
     };
 
     return (
