@@ -153,7 +153,8 @@ function App() {
   const petsOverrides = {
     Pets: {
       style: { marginTop: "20px" },
-      templateColumns: 'var(--pet-grid-columns)'
+      templateColumns: 'var(--pet-grid-columns)',
+      itemsPerPage: '8'
     },
   };
 
