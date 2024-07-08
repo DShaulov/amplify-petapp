@@ -44,7 +44,7 @@ export default function Pets(props) {
       {(item, index) => (
         <PetProfile
           pet={item}
-          margin="1rem 1rem 1rem 1rem"
+          margin="0rem 0rem 0rem 0rem"
           key={item.id}
           {...(overrideItems && overrideItems({ item, index }))}
         ></PetProfile>

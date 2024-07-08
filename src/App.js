@@ -58,6 +58,11 @@ function App() {
     image: {
       src: 'https://img.icons8.com/color/50/000000/dog'
     },
+    'NavBarHeader': {
+      style: {
+        width: '100%',
+      }
+    },
     "RegisterDog": {
       style: {
         cursor: "pointer",
@@ -69,9 +74,12 @@ function App() {
       display: signedIn ? "block" : "none"
     },
     "SignButton": {
+      style: {
+        cursor: 'pointer'
+      },
       onClick: signedIn ? handleSignOut : handleSignIn,
-      children: signedIn ? 'Sign Out' : 'Sign In'
     },
+    'label': {children: signedIn ? 'Sign Out' : 'Sign In'}
   };
   const petsOverrideItems = ({item, index}) => ({
     overrides: {
@@ -79,9 +87,13 @@ function App() {
         onClick: () => {
           setShowDetails(!showDetails);
           setPet(item);
+        },
+        style: {
+          cursor: 'pointer'
         }
-      }
-    }
+      },
+      margin: '0rem 0rem 0rem 0rem'
+    },
   });
 
   const petDetailsOverrides = {
@@ -122,9 +134,9 @@ function App() {
       maxWidth: "100%",
     },
     "Banner 1": {
-      width: "75%",
+      width: "var(--banner-width)",
       height: "auto",
-      maxWidth: "75%",
+      maxWidth: "var(--banner-maxWidth)",
       objectFit: "cover",
     }
   };
@@ -142,7 +154,7 @@ function App() {
       width: "100%",
       height: "auto",
       maxWidth: "100%",
-      fontSize: "clamp(20px, 4vw, 48px)", // Decreased font size range
+      fontSize: "var(--availableDog-fontSize)",
       lineHeight: "1.2",
       letterSpacing: "0.05em",
       textAlign: "center",

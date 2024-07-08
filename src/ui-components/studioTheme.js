@@ -2281,7 +2281,7 @@ export default createTheme({
     values: {
       base: 0,
       small: 480,
-      medium: 768,
+      medium: 850,
       large: 992,
       xl: 1280,
       xxl: 1536,

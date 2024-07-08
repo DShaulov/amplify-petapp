@@ -37,6 +37,8 @@ export declare type MarketingFooterOverridesProps = {
     "\u00A9 2024 Adoptadog - Helping Paws Find Happy Homes."?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type MarketingFooterProps = React.PropsWithChildren<Partial<FlexProps> & {
+    breakpoint?: "large" | "medium";
+} & {
     overrides?: MarketingFooterOverridesProps | undefined | null;
 }>;
 export default function MarketingFooter(props: MarketingFooterProps): React.ReactElement;

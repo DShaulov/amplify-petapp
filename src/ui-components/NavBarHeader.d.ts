@@ -5,7 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { ButtonProps, FlexProps, IconProps, ViewProps } from "@aws-amplify/ui-react";
+import { FlexProps, IconProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -35,9 +35,14 @@ export declare type NavBarHeaderOverridesProps = {
     RegisterDog?: PrimitiveOverrideProps<IconProps>;
     "Frame 32129767081"?: PrimitiveOverrideProps<FlexProps>;
     "Frame 437"?: PrimitiveOverrideProps<FlexProps>;
-    SignButton?: PrimitiveOverrideProps<ButtonProps>;
+    SignButton?: PrimitiveOverrideProps<FlexProps>;
+    "Button Icon40371783"?: PrimitiveOverrideProps<IconProps>;
+    label?: PrimitiveOverrideProps<TextProps>;
+    "Button Icon40371785"?: PrimitiveOverrideProps<IconProps>;
 } & EscapeHatchProps;
 export declare type NavBarHeaderProps = React.PropsWithChildren<Partial<FlexProps> & {
+    breakpoint?: "large" | "medium";
+} & {
     overrides?: NavBarHeaderOverridesProps | undefined | null;
 }>;
 export default function NavBarHeader(props: NavBarHeaderProps): React.ReactElement;
