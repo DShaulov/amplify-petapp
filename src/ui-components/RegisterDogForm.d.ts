@@ -5,8 +5,8 @@
  **************************************************************************/
 
 import * as React from "react";
-import { MyIconProps } from "./MyIcon";
 import { ButtonProps, FlexProps, IconProps, ImageProps, SelectFieldProps, StepperFieldProps, TextAreaFieldProps, TextFieldProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
+import { MyIconProps } from "./MyIcon";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -46,6 +46,8 @@ export declare type RegisterDogFormOverridesProps = {
     RegisterBtn?: PrimitiveOverrideProps<ButtonProps>;
 } & EscapeHatchProps;
 export declare type RegisterDogFormProps = React.PropsWithChildren<Partial<FlexProps> & {
+    breakpoint?: "large" | "medium";
+} & {
     overrides?: RegisterDogFormOverridesProps | undefined | null;
 }>;
 export default function RegisterDogForm(props: RegisterDogFormProps): React.ReactElement;

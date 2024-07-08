@@ -38,7 +38,7 @@ export default function MarketingFooter(props) {
         "Logo Text": {},
         "Frame 438": {},
         "Frame 321": {},
-        "\u00A9 2024 Adoptadog - Helping Paws Find Happy Homes.": {},
+        "\u00A9 2024 Adoptadog": {},
         "Frame 433": {},
         MarketingFooter: {},
       },
@@ -268,11 +268,12 @@ export default function MarketingFooter(props) {
           height: "50.42px",
         },
         "Frame 321": { gap: "30.375px", width: "187.11px", height: "34.02px" },
-        "\u00A9 2024 Adoptadog - Helping Paws Find Happy Homes.": {
+        "\u00A9 2024 Adoptadog": {
           fontSize: "7.775999546051025px",
           lineHeight: "11.663999557495117px",
+          children: "\u00A9 2024 Adoptadog",
         },
-        "Frame 433": {},
+        "Frame 433": { padding: "0px 15px 0px 15px" },
         MarketingFooter: {
           gap: "19.439998626708984px",
           width: "503px",
@@ -698,10 +699,7 @@ export default function MarketingFooter(props) {
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
           children="© 2024 Adoptadog - Helping Paws Find Happy Homes."
-          {...getOverrideProps(
-            overrides,
-            "\u00A9 2024 Adoptadog - Helping Paws Find Happy Homes."
-          )}
+          {...getOverrideProps(overrides, "\u00A9 2024 Adoptadog")}
         ></Text>
       </Flex>
     </Flex>

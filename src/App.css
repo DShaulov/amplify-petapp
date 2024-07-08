@@ -96,7 +96,7 @@
   --pet-grid-columns: 1fr 1fr;
   --banner-width:120%;
   --banner-maxWidth: 120%;
-  --availableDog-fontSize: clamp(35px, 4vw, 48px)
+  --availableDog-fontSize: clamp(30px, 4vw, 48px)
 }
 
 @media (min-width: 850px) {

@@ -282,24 +282,24 @@ export default function NavBarHeader(props) {
         "Frame 32129767076": { gap: "10px", width: "236px", height: "67px" },
         "Frame 437": { gap: "8px", width: "56px" },
         "Button Icon40371783": {
-          width: "12.8px",
-          height: "12.8px",
-          fontSize: "12.8px",
+          width: "15.36px",
+          height: "15.36px",
+          fontSize: "15.36px",
         },
         label: {
-          fontSize: "12.800000190734863px",
-          lineHeight: "19.200000762939453px",
+          fontSize: "15.360000610351562px",
+          lineHeight: "23.040000915527344px",
         },
         "Button Icon40371785": {
-          width: "12.8px",
-          height: "12.8px",
-          fontSize: "12.8px",
+          width: "15.36px",
+          height: "15.36px",
+          fontSize: "15.36px",
         },
         SignButton: {
-          border: "0.64px SOLID rgba(0,0,0,0)",
-          borderRadius: "2.56000018119812px",
+          border: "0.77px SOLID rgba(0,0,0,0)",
+          borderRadius: "3.07200026512146px",
           padding:
-            "4.48000031709671px 9.60000067949295px 4.48000031709671px 9.60000067949295px",
+            "5.376000463962555px 11.520000994205475px 5.376000463962555px 11.520000994205475px",
         },
         "Frame 32129767081": { gap: "20px" },
         NavBarHeader: {

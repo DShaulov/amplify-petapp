@@ -34,7 +34,7 @@ export declare type MarketingFooterOverridesProps = {
     Vector401825501?: PrimitiveOverrideProps<IconProps>;
     Vector401825502?: PrimitiveOverrideProps<IconProps>;
     "Logo Text"?: PrimitiveOverrideProps<IconProps>;
-    "\u00A9 2024 Adoptadog - Helping Paws Find Happy Homes."?: PrimitiveOverrideProps<TextProps>;
+    "\u00A9 2024 Adoptadog"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type MarketingFooterProps = React.PropsWithChildren<Partial<FlexProps> & {
     breakpoint?: "large" | "medium";
